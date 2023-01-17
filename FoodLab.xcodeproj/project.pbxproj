@@ -26,6 +26,7 @@
 		DC20793F297740CE00FABE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC20794B297741D500FABE95 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewFormViewController.swift; sourceTree = "<group>"; };
+		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
+				DC2079542977586D00FABE95 /* README.md */,
 				DC207930297740CD00FABE95 /* FoodLab */,
 				DC20792F297740CD00FABE95 /* Products */,
 			);
