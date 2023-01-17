@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
-		DC207936297740CD00FABE95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* ViewController.swift */; };
-		DC207939297740CD00FABE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC207937297740CD00FABE95 /* Main.storyboard */; };
+		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
 		DC20793B297740CE00FABE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC20793A297740CE00FABE95 /* Assets.xcassets */; };
 		DC20793E297740CE00FABE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20793C297740CE00FABE95 /* LaunchScreen.storyboard */; };
+		DC20794C297741D500FABE95 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20794B297741D500FABE95 /* TabItem.swift */; };
+		DC20795329774BAB00FABE95 /* AddReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC207935297740CD00FABE95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DC207938297740CD00FABE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC207935297740CD00FABE95 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DC20793A297740CE00FABE95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC20793D297740CE00FABE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC20793F297740CE00FABE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC20794B297741D500FABE95 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,64 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
-				DC207931297740CD00FABE95 /* AppDelegate.swift */,
-				DC207933297740CD00FABE95 /* SceneDelegate.swift */,
-				DC207935297740CD00FABE95 /* ViewController.swift */,
-				DC207937297740CD00FABE95 /* Main.storyboard */,
-				DC20793A297740CE00FABE95 /* Assets.xcassets */,
-				DC20793C297740CE00FABE95 /* LaunchScreen.storyboard */,
-				DC20793F297740CE00FABE95 /* Info.plist */,
+				DC20795129774B4A00FABE95 /* AddReviewForm */,
+				DC207945297740FA00FABE95 /* Core */,
+				DC2079482977413100FABE95 /* Home */,
+				DC20794A297741BD00FABE95 /* Models */,
+				DC2079462977410200FABE95 /* Resources */,
+				DC20794D297741E700FABE95 /* Utils */,
 			);
 			path = FoodLab;
+			sourceTree = "<group>";
+		};
+		DC207945297740FA00FABE95 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DC207933297740CD00FABE95 /* SceneDelegate.swift */,
+				DC207931297740CD00FABE95 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DC2079462977410200FABE95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC20793F297740CE00FABE95 /* Info.plist */,
+				DC20793C297740CE00FABE95 /* LaunchScreen.storyboard */,
+				DC20793A297740CE00FABE95 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC2079482977413100FABE95 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DC207935297740CD00FABE95 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DC20794A297741BD00FABE95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC20794B297741D500FABE95 /* TabItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC20794D297741E700FABE95 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DC20795129774B4A00FABE95 /* AddReviewForm */ = {
+			isa = PBXGroup;
+			children = (
+				DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */,
+			);
+			path = AddReviewForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +178,6 @@
 			files = (
 				DC20793E297740CE00FABE95 /* LaunchScreen.storyboard in Resources */,
 				DC20793B297740CE00FABE95 /* Assets.xcassets in Resources */,
-				DC207939297740CD00FABE95 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC207936297740CD00FABE95 /* ViewController.swift in Sources */,
+				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
+				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
+				DC20795329774BAB00FABE95 /* AddReviewFormViewController.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DC207937297740CD00FABE95 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC207938297740CD00FABE95 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DC20793C297740CE00FABE95 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +260,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +315,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,7 +338,6 @@
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +365,6 @@
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

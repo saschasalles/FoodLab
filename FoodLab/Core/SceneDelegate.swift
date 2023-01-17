@@ -11,12 +11,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    static private func makeTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController(nibName: nil, bundle: nil)
+        tabBarController.setViewControllers(
+            TabItem.allCases.map { $0.navigationController },
+            animated: false
+        )
+
+        tabBarController.tabBar.backgroundColor = .systemBackground
+        let appearance = UITabBarAppearance()
+        appearance.shadowColor = .clear
+        appearance.shadowImage = nil
+        appearance.backgroundImage = nil
+
+        tabBarController.tabBar.layer.shadowOffset = .zero
+        tabBarController.tabBar.layer.shadowRadius = 22
+        tabBarController.tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBarController.tabBar.layer.shadowOpacity = 0.08
+        tabBarController.tabBar.standardAppearance = appearance
+        tabBarController.tabBar.scrollEdgeAppearance = appearance
+
+        return tabBarController
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = Self.makeTabBarController()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
