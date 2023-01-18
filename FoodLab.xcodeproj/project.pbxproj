@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		15E3A5DE29780026009100A6 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5DD29780026009100A6 /* FavoriteTableViewCell.swift */; };
+		15E3A5E129780639009100A6 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5E029780639009100A6 /* PlacesTableViewCell.swift */; };
+		15E3A5E429781E05009100A6 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5E329781E05009100A6 /* HeaderCollectionReusableView.swift */; };
+		15E3A5E6297826FB009100A6 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5E5297826FB009100A6 /* ReviewsTableViewCell.swift */; };
+		15E3A5EC29784B0B009100A6 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5EB29784B0B009100A6 /* UIView+Ext.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		15E3A5DD29780026009100A6 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		15E3A5E029780639009100A6 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
+		15E3A5E329781E05009100A6 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		15E3A5E5297826FB009100A6 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		15E3A5EB29784B0B009100A6 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +62,31 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		15E3A5DF29780622009100A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15E3A5E5297826FB009100A6 /* ReviewsTableViewCell.swift */,
+				15E3A5E029780639009100A6 /* PlacesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		15E3A5E229781DF1009100A6 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				15E3A5E329781E05009100A6 /* HeaderCollectionReusableView.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		15E3A5EA29784AFD009100A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15E3A5EB29784B0B009100A6 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +107,7 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				15E3A5EA29784AFD009100A6 /* Extensions */,
 				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
@@ -106,6 +140,8 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				15E3A5E229781DF1009100A6 /* Headers */,
+				15E3A5DF29780622009100A6 /* Cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -208,12 +244,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				15E3A5E6297826FB009100A6 /* ReviewsTableViewCell.swift in Sources */,
 				15E3A5DE29780026009100A6 /* FavoriteTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
+				15E3A5E129780639009100A6 /* PlacesTableViewCell.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				15E3A5EC29784B0B009100A6 /* UIView+Ext.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				15E3A5E429781E05009100A6 /* HeaderCollectionReusableView.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

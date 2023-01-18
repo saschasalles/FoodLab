@@ -1,5 +1,5 @@
 //
-//  FavoriteTableViewCell.swift
+//  ReviewsTableViewCell.swift
 //  FoodLab
 //
 //  Created by Clément Dudit on 18/01/2023.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FavoriteTableViewCell: UITableViewCell {
+class ReviewsTableViewCell: UICollectionViewCell {
 
-    static let reuseIdentifier = String(describing: FavoriteTableViewCell.self)
+    static let reuseIdentifier = String(describing: ReviewsTableViewCell.self)
 
     // MARK: - UI Properties
 
@@ -27,7 +27,14 @@ class FavoriteTableViewCell: UITableViewCell {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 13, weight: .medium)
+        label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.textAlignment = .left
+        return label
+    }()
+
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10, weight: .regular)
         label.textAlignment = .left
         return label
     }()
@@ -35,8 +42,8 @@ class FavoriteTableViewCell: UITableViewCell {
 
     // MARK: - Lifecycle
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureUI()
     }
 
@@ -46,9 +53,10 @@ class FavoriteTableViewCell: UITableViewCell {
 
     // MARK: - Exposed methods
 
-    func configure(place: Place) {
-        image.image = UIImage(named: place.imagePath)
-        titleLabel.text = place.name
+    func configure(review: Review) {
+        image.image = UIImage(named: review.imagePaths[0])
+        titleLabel.text = review.title
+        subtitleLabel.text = review.content
     }
 
     // MARK: - Private methods
@@ -56,6 +64,7 @@ class FavoriteTableViewCell: UITableViewCell {
     private func configureUI() {
         contentView.addSubview(image)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLabel)
         contentView.backgroundColor = .secondarySystemGroupedBackground
         contentView.layer.cornerRadius = radius + padding
         contentView.layer.cornerCurve = .continuous
@@ -63,18 +72,21 @@ class FavoriteTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.sizeToFit()
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.sizeToFit()
 
         NSLayoutConstraint.activate([
             image.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            image.heightAnchor.constraint(equalTo: image.widthAnchor),
-            image.widthAnchor.constraint(equalToConstant: 60.0),
-            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            image.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -(padding * 2)),
+            image.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: padding),
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
 
-            titleLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: padding),
-            titleLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding)
+            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 3.0),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3.0),
+            subtitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding)
         ])
     }
 }
