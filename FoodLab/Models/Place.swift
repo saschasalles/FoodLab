@@ -13,7 +13,7 @@ struct Place: Identifiable {
     var name: String
     var cookStyle: CookStyle
     var description: String
-    var isFavorite: Bool = false
+    var isFavorite: Bool = true
 
     var coordinates: String?
     var imagePath: String

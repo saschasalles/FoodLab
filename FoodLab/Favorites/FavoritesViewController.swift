@@ -9,7 +9,10 @@ import UIKit
 
 final class FavoritesViewController: UIViewController {
 
+    var favoritesPlace: [Place]
+
     init() {
+        favoritesPlace = Place.all.filter({$0.isFavorite})
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -19,9 +22,9 @@ final class FavoritesViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
+        tableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
 
-        //   tableView.dataSource = self
+        tableView.dataSource = self
         tableView.delegate = self
 
         return tableView
@@ -32,6 +35,7 @@ final class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        tableView.reloadData()
     }
 
     // MARK: - Exposed Properties
@@ -62,21 +66,27 @@ final class FavoritesViewController: UIViewController {
 }
 
 extension FavoritesViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 70
     }
 
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
         UISwipeActionsConfiguration(actions: [
-                    UIContextualAction(style: .destructive, title: "Remove", handler: { [weak self] _, _, _ in
-                        guard let self else { return }
-                       // TODO 
-                    })
-                ])
+            UIContextualAction(style: .destructive, title: "Remove", handler: { [weak self] _, _, _ in
+                guard let self else { return }
+                Place.all.removeAll(where: {$0.name == self.favoritesPlace[indexPath.row].name})
+                self.favoritesPlace = Place.all.filter({$0.isFavorite})
+                self.tableView.reloadData()
+            })
+        ])
     }
 
 }
@@ -84,15 +94,18 @@ extension FavoritesViewController: UITableViewDelegate {
 extension FavoritesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return favoritesPlace.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.reuseIdentifier) as? FavoritesTableViewCell else {
-            return UITableViewCell()
+            return FavoritesTableViewCell()
         }
 
-        cell.configure(place: Place.all.first!)
+        cell.configure(place: favoritesPlace[indexPath.row])
 
         return cell
     }

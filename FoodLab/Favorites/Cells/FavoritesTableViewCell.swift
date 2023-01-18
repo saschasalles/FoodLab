@@ -11,6 +11,7 @@ class FavoritesTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: FavoritesTableViewCell.self)
 
+    // MARK: graphic elements
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .medium)
@@ -19,6 +20,19 @@ class FavoritesTableViewCell: UITableViewCell {
         return label
     }()
 
+    private lazy var placeImageView : UIImageView = {
+        let imageView = UIImageView()
+
+        imageView.clipsToBounds = true
+
+        imageView.layer.cornerRadius = 8
+
+
+        return imageView
+    }()
+
+    let padding : CGFloat = 8
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,7 +40,6 @@ class FavoritesTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
@@ -41,18 +54,35 @@ class FavoritesTableViewCell: UITableViewCell {
     }
 
     func configureUI() {
+
+
+        nameLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        nameLabel.textAlignment = .left
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+
+
+
+        placeImageView.translatesAutoresizingMaskIntoConstraints = false
+
         contentView.addSubview(nameLabel)
+        contentView.addSubview(placeImageView)
+
+
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            nameLabel.leadingAnchor.constraint(equalTo: placeImageView.trailingAnchor, constant: padding),
+            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+
+            placeImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+            placeImageView.widthAnchor.constraint(equalToConstant: 80),
+            placeImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
+            placeImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
 
     }
 
     func configure(place: Place) {
         nameLabel.text = place.name
+        placeImageView.image = UIImage(named: place.imagePath)
     }
 
 }
