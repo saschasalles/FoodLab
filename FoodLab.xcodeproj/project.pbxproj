@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		936ED2BD29780B7F0035DAA9 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2BC29780B7F0035DAA9 /* CustomTableViewCell.swift */; };
+		936ED2BF297824540035DAA9 /* PlaceModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */; };
+		936ED2C1297834870035DAA9 /* PlaceModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		936ED2BC29780B7F0035DAA9 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModalViewController.swift; sourceTree = "<group>"; };
+		936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModalTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		936ED2C2297834960035DAA9 /* PlaceModal */ = {
+			isa = PBXGroup;
+			children = (
+				936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */,
+				936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */,
+			);
+			path = PlaceModal;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +111,9 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				936ED2C2297834960035DAA9 /* PlaceModal */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
+				936ED2BC29780B7F0035DAA9 /* CustomTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -198,10 +215,13 @@
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
+				936ED2BD29780B7F0035DAA9 /* CustomTableViewCell.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
+				936ED2C1297834870035DAA9 /* PlaceModalTableViewCell.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				936ED2BF297824540035DAA9 /* PlaceModalViewController.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
