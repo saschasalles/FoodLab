@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlacesTableViewCell: UICollectionViewCell {
+final class PlacesTableViewCell: UICollectionViewCell {
 
     static let reuseIdentifier = String(describing: PlacesTableViewCell.self)
 

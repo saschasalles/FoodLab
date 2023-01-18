@@ -7,11 +7,11 @@
 
 import UIKit
 
-
 final class FavoritesViewController: UIViewController {
 
+    // MARK: - Private Properties
+
     private var places: [Place] { getFavoritesPlaces() }
-    private let reuseIdentifier = String(describing: FavoritesViewController.self)
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -37,15 +37,6 @@ final class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
-
-    // MARK: - Exposed Properties
-
-
-    // MARK: - Exposed Methods
-
-
-    // MARK: - Private Properties
-
 
     // MARK: - Private Methods
 

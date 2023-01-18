@@ -139,14 +139,16 @@ final class HomeViewController: UIViewController {
                 title: "Add New Place",
                 image: UIImage(systemName: "mappin"),
                 handler: { [weak self] _ in
-
+                    let vc = AddViewController(addType: .place)
+                    self?.present(vc, animated: true)
                 }
             ),
             UIAction(
                 title: "Add New Review",
                 image: UIImage(systemName: "list.bullet.clipboard"),
                 handler: { [weak self] _ in
-
+                    let vc = AddViewController(addType: .review)
+                    self?.present(vc, animated: true)
                 }
             )
         ]
@@ -159,7 +161,6 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
-
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -241,9 +242,6 @@ extension HomeViewController: UICollectionViewDataSource {
                 } else if indexPath.row == places.count - 1 {
                     cell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
                 }
-
-                cell.layer.borderColor = UIColor.black.cgColor
-                cell.layer.borderWidth = 1.0
 
                 cell.configure(place: places[indexPath.row])
                 return cell

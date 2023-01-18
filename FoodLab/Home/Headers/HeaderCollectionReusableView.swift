@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderCollectionReusableView: UICollectionReusableView {
+final class HeaderCollectionReusableView: UICollectionReusableView {
 
     static let reusableIdentifier = String(describing: HeaderCollectionReusableView.self)
     static let kind = String(describing: HeaderCollectionReusableView.self)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteTableViewCell: UITableViewCell {
+final class FavoriteTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: FavoriteTableViewCell.self)
 

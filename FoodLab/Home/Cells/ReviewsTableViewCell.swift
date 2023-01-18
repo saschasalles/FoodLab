@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewsTableViewCell: UICollectionViewCell {
+final class ReviewsTableViewCell: UICollectionViewCell {
 
     static let reuseIdentifier = String(describing: ReviewsTableViewCell.self)
 
