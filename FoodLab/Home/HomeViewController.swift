@@ -38,4 +38,3 @@ final class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
-

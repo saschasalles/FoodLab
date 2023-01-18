@@ -11,7 +11,7 @@ class FavoritesTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: FavoritesTableViewCell.self)
 
-    // MARK: graphic elements
+    // MARK: exposed properties
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .medium)
@@ -20,18 +20,17 @@ class FavoritesTableViewCell: UITableViewCell {
         return label
     }()
 
-    private lazy var placeImageView : UIImageView = {
+    private lazy var placeImageView: UIImageView = {
         let imageView = UIImageView()
 
         imageView.clipsToBounds = true
 
         imageView.layer.cornerRadius = 8
 
-
         return imageView
     }()
 
-    let padding : CGFloat = 8
+    let padding: CGFloat = 8
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,18 +54,14 @@ class FavoritesTableViewCell: UITableViewCell {
 
     func configureUI() {
 
-
         nameLabel.font = .systemFont(ofSize: 13, weight: .medium)
         nameLabel.textAlignment = .left
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-
-
 
         placeImageView.translatesAutoresizingMaskIntoConstraints = false
 
         contentView.addSubview(nameLabel)
         contentView.addSubview(placeImageView)
-
 
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: placeImageView.trailingAnchor, constant: padding),

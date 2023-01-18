@@ -9,15 +9,12 @@ import UIKit
 
 final class FavoritesViewController: UIViewController {
 
-    var favoritesPlace: [Place]
+    // MARK: - Exposed Properties
 
-    init() {
-        favoritesPlace = Place.all.filter({$0.isFavorite})
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    var favoritesPlace: [Place] {
+        didSet {
+            tableView.reloadData()
+        }
     }
 
     private lazy var tableView: UITableView = {
@@ -38,7 +35,14 @@ final class FavoritesViewController: UIViewController {
         tableView.reloadData()
     }
 
-    // MARK: - Exposed Properties
+    init() {
+        favoritesPlace = Place.all.filter({$0.isFavorite})
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Exposed Methods
 
@@ -101,7 +105,9 @@ extension FavoritesViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.reuseIdentifier) as? FavoritesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: FavoritesTableViewCell.reuseIdentifier
+        ) as? FavoritesTableViewCell else {
             return FavoritesTableViewCell()
         }
 
