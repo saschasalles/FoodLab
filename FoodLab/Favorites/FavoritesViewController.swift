@@ -19,7 +19,7 @@ final class FavoritesViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .systemGroupedBackground
         tableView.alwaysBounceVertical = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(FavoriteTableViewCell.self, forCellReuseIdentifier: FavoriteTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -74,10 +74,10 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteTableViewCell.reuseIdentifier) as? FavoriteTableViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = places[indexPath.row].name
+        cell.configure(place: places[indexPath.row])
 
         return cell
     }
