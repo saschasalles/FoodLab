@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54805342977F468000A64BB /* FavoritesTableViewCell.swift */; };
+		D5ECDEB4297825E9007AAAB6 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */; };
+		D5ECDEB729782890007AAAB6 /* MultipleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */; };
+		D5ECDEB9297828AE007AAAB6 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		D54805342977F468000A64BB /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
+		D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +60,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D5ECDEB2297825BE007AAAB6 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				D5ECDEB529782868007AAAB6 /* Cells */,
+				D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		D5ECDEB529782868007AAAB6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */,
+				D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +98,7 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				D5ECDEB2297825BE007AAAB6 /* Add */,
 				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
@@ -229,9 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5ECDEB729782890007AAAB6 /* MultipleChoiceTableViewCell.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */,
+				D5ECDEB9297828AE007AAAB6 /* TextFieldTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
+				D5ECDEB4297825E9007AAAB6 /* AddPlaceViewController.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,

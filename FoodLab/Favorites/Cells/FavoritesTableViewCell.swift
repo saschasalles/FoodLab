@@ -63,6 +63,11 @@ class FavoritesTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(placeImageView)
 
+        setUpConstraint()
+
+    }
+
+    fileprivate func setUpConstraint() {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: placeImageView.trailingAnchor, constant: padding),
             nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -72,7 +77,6 @@ class FavoritesTableViewCell: UITableViewCell {
             placeImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             placeImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -padding)
         ])
-
     }
 
     func configure(place: Place) {
