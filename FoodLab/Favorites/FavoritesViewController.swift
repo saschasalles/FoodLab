@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 final class FavoritesViewController: UIViewController {
 
     init() {
@@ -18,6 +17,16 @@ final class FavoritesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
+
+        //   tableView.dataSource = self
+        tableView.delegate = self
+
+        return tableView
+    }()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -27,12 +36,9 @@ final class FavoritesViewController: UIViewController {
 
     // MARK: - Exposed Properties
 
-
     // MARK: - Exposed Methods
 
-
     // MARK: - Private Properties
-
 
     // MARK: - Private Methods
 
@@ -40,6 +46,55 @@ final class FavoritesViewController: UIViewController {
         view.backgroundColor = .systemGroupedBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = TabItem.favs.title
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(tableView)
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
+
     }
 }
 
+extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        UISwipeActionsConfiguration(actions: [
+                    UIContextualAction(style: .destructive, title: "Remove", handler: { [weak self] _, _, _ in
+                        guard let self else { return }
+                       // TODO 
+                    })
+                ])
+    }
+
+}
+
+extension FavoritesViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.reuseIdentifier) as? FavoritesTableViewCell else {
+            return UITableViewCell()
+        }
+
+        cell.configure(place: Place.all.first!)
+
+        return cell
+    }
+
+}

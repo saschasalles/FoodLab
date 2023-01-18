@@ -26,12 +26,9 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Exposed Properties
 
-
     // MARK: - Exposed Methods
 
-
     // MARK: - Private Properties
-
 
     // MARK: - Private Methods
 

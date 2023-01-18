@@ -18,6 +18,5 @@ struct Review: Identifiable {
     var rate: Int
 
     static var all: [Self] = [
-        
     ]
 }

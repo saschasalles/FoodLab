@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54805342977F468000A64BB /* FavoritesTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D54805342977F468000A64BB /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D54805332977F437000A64BB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D54805342977F468000A64BB /* FavoritesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		DC20795129774B4A00FABE95 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				D54805332977F437000A64BB /* Cells */,
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
 			);
 			path = Favorites;
@@ -133,6 +144,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC207942297740CE00FABE95 /* Build configuration list for PBXNativeTarget "FoodLab" */;
 			buildPhases = (
+				D5ECDEB12977FE3A007AAAB6 /* Linter */,
 				DC20792A297740CD00FABE95 /* Sources */,
 				DC20792B297740CD00FABE95 /* Frameworks */,
 				DC20792C297740CD00FABE95 /* Resources */,
@@ -191,12 +203,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D5ECDEB12977FE3A007AAAB6 /* Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Linter;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DC20792A297740CD00FABE95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
