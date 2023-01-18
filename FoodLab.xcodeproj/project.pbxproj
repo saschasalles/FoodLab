@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D185108E2977FE5D00A91511 /* PlacesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185108D2977FE5D00A91511 /* PlacesListCollectionViewCell.swift */; };
+		D185109129783DB900A91511 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185109029783DB900A91511 /* PlacesTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D185108D2977FE5D00A91511 /* PlacesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListCollectionViewCell.swift; sourceTree = "<group>"; };
+		D185109029783DB900A91511 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D185108F2978293D00A91511 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D185108D2977FE5D00A91511 /* PlacesListCollectionViewCell.swift */,
+				D185109029783DB900A91511 /* PlacesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +77,7 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				D185108F2978293D00A91511 /* Cells */,
 				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
@@ -196,10 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D185108E2977FE5D00A91511 /* PlacesListCollectionViewCell.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
+				D185109129783DB900A91511 /* PlacesTableViewCell.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,

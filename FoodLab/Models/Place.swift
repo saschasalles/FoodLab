@@ -35,15 +35,17 @@ struct Place: Identifiable {
             name: "Le Quatrieme Mur",
             cookStyle: .fineDining,
             description: "Installé dans le Grand Théâtre de Bordeaux, ce restaurant sert une cuisine de saison raffinée dans un cadre élégant et lumineux.",
-            imagePath: "quatrieme-mur"
+            isFavorite: true, imagePath: "quatrieme-mur"
         ),
         .init(
             name: "Daily-D",
             cookStyle: .fastfood,
             description: "Sandwicherie préférée de Yannick Nay",
-            imagePath: "daily-d"
+            isFavorite: true, imagePath: "daily-d"
         )
     ]
+
+    static var favorites: [Self] = Place.all.filter { $0.isFavorite }
 }
 
 extension Place: Equatable, Hashable {}
