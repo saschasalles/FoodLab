@@ -23,6 +23,7 @@ struct Place: Identifiable {
             name: "Tutiac, Le Bistro des Vignerons",
             cookStyle: .french,
             description: "Notre jeune chef s’inspire des classiques de la gastronomie du Sud-ouest et y apporte sa créativité. Ici on défend le goût et les producteurs de nos régions.",
+            isFavorite: true,
             imagePath: "tutiac"
         ),
         .init(

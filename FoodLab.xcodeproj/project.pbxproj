@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4C8BD1329782B7A00A526D4 /* HomeListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8BD1229782B7A00A526D4 /* HomeListCollectionViewCell.swift */; };
+		B4C8BD152978404200A526D4 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C8BD142978404200A526D4 /* FavoritesTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4C8BD1229782B7A00A526D4 /* HomeListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4C8BD142978404200A526D4 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4C8BD1029782AF600A526D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B4C8BD1229782B7A00A526D4 /* HomeListCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B4C8BD1129782AFF00A526D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B4C8BD142978404200A526D4 /* FavoritesTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DC207925297740CD00FABE95 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +116,7 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B4C8BD1029782AF600A526D4 /* Cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -121,6 +142,7 @@
 		DC20795129774B4A00FABE95 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				B4C8BD1129782AFF00A526D4 /* Cells */,
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
 			);
 			path = Favorites;
@@ -197,11 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				B4C8BD152978404200A526D4 /* FavoritesTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				B4C8BD1329782B7A00A526D4 /* HomeListCollectionViewCell.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
