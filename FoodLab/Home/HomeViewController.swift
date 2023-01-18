@@ -51,23 +51,20 @@ final class HomeViewController: UIViewController {
         let actions: [UIAction] = [
             UIAction(
                 title: "Add New Place",
+                image: UIImage(systemName: "mappin"),
                 handler: { [weak self] _ in
 
                 }
             ),
             UIAction(
                 title: "Add New Review",
+                image: UIImage(systemName: "list.bullet.clipboard"),
                 handler: { [weak self] _ in
 
                 }
             )
         ]
-
-        let menu = UIMenu(
-            image: nil,
-            children: actions
-        )
-
+        let menu = UIMenu(children: actions)
         return menu
     }
 }
