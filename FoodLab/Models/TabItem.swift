@@ -9,7 +9,7 @@ import UIKit
 
 enum TabItem: Int, CaseIterable {
     case home
-    case add
+    case favs
 
     var navigationController: UINavigationController {
         switch self {
@@ -17,9 +17,9 @@ enum TabItem: Int, CaseIterable {
             return makeNavigationViewController(
                 rootViewController: HomeViewController()
             )
-        case .add:
+        case .favs:
             return makeNavigationViewController(
-                rootViewController: AddReviewFormViewController()
+                rootViewController: FavoritesViewController()
             )
         }
     }
@@ -27,14 +27,14 @@ enum TabItem: Int, CaseIterable {
     var title: String {
         switch self {
         case .home:     return "Home"
-        case .add:      return "Add"
+        case .favs:      return "Favorites"
         }
     }
 
     var image: UIImage? {
         switch self {
         case .home:     return UIImage(systemName: "house.fill")
-        case .add:      return UIImage(systemName: "star.square.fill")
+        case .favs:      return UIImage(systemName: "star.square.fill")
         }
     }
 

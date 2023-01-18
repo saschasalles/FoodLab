@@ -13,7 +13,9 @@
 		DC20793B297740CE00FABE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC20793A297740CE00FABE95 /* Assets.xcassets */; };
 		DC20793E297740CE00FABE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20793C297740CE00FABE95 /* LaunchScreen.storyboard */; };
 		DC20794C297741D500FABE95 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20794B297741D500FABE95 /* TabItem.swift */; };
-		DC20795329774BAB00FABE95 /* AddReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */; };
+		DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* FavoritesViewController.swift */; };
+		DC2079582977625500FABE95 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079572977625500FABE95 /* Place.swift */; };
+		DC20795A2977636A00FABE95 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079592977636A00FABE95 /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +27,10 @@
 		DC20793D297740CE00FABE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC20793F297740CE00FABE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC20794B297741D500FABE95 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
-		DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewFormViewController.swift; sourceTree = "<group>"; };
+		DC20795229774BAB00FABE95 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DC2079572977625500FABE95 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		DC2079592977636A00FABE95 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
-				DC20795129774B4A00FABE95 /* AddReviewForm */,
+				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
 				DC20794A297741BD00FABE95 /* Models */,
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				DC20794B297741D500FABE95 /* TabItem.swift */,
+				DC2079572977625500FABE95 /* Place.swift */,
+				DC2079592977636A00FABE95 /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,12 +118,12 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		DC20795129774B4A00FABE95 /* AddReviewForm */ = {
+		DC20795129774B4A00FABE95 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				DC20795229774BAB00FABE95 /* AddReviewFormViewController.swift */,
+				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
 			);
-			path = AddReviewForm;
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,9 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
-				DC20795329774BAB00FABE95 /* AddReviewFormViewController.swift in Sources */,
+				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				DC2079582977625500FABE95 /* Place.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +271,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -318,7 +326,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

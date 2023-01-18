@@ -1,5 +1,5 @@
 //
-//  AddReviewFormViewController.swift
+//  FavoritesViewController.swift
 //  FoodLab
 //
 //  Created by Sascha Sallès on 17/01/2023.
@@ -7,7 +7,16 @@
 
 import UIKit
 
-final class AddReviewFormViewController: UIViewController {
+
+final class FavoritesViewController: UIViewController {
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
 
@@ -29,7 +38,8 @@ final class AddReviewFormViewController: UIViewController {
 
     private func configureUI() {
         view.backgroundColor = .systemGroupedBackground
-        navigationItem.title = TabItem.add.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = TabItem.favs.title
     }
 }
 

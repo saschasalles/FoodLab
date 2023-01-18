@@ -9,6 +9,14 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -30,6 +38,7 @@ final class HomeViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .systemGroupedBackground
         navigationItem.title = TabItem.home.title
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
