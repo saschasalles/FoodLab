@@ -2,7 +2,7 @@
 //  Place.swift
 //  FoodLab
 //
-//  Created by Sascha Sallès on 18/01/2023.
+//  Created by Paul Vayssier on 18/01/2023.
 //
 
 import Foundation

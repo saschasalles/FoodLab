@@ -16,6 +16,10 @@
 		DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* FavoritesViewController.swift */; };
 		DC2079582977625500FABE95 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079572977625500FABE95 /* Place.swift */; };
 		DC20795A2977636A00FABE95 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079592977636A00FABE95 /* Review.swift */; };
+		E2E190432977FD2500C951ED /* HomeGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */; };
+		E2E190452977FF7600C951ED /* HomeListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */; };
+		E2E1904729784D5400C951ED /* AddPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */; };
+		E2E19049297853FF00C951ED /* AddPlaceCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC2079572977625500FABE95 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DC2079592977636A00FABE95 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCollectionCell.swift; sourceTree = "<group>"; };
+		E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceTableViewController.swift; sourceTree = "<group>"; };
+		E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +77,6 @@
 				DC2079482977413100FABE95 /* Home */,
 				DC20794A297741BD00FABE95 /* Models */,
 				DC2079462977410200FABE95 /* Resources */,
-				DC20794D297741E700FABE95 /* Utils */,
 			);
 			path = FoodLab;
 			sourceTree = "<group>";
@@ -96,7 +103,9 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E2E1903F2977FCB700C951ED /* Cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
+				E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -111,19 +120,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DC20794D297741E700FABE95 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		DC20795129774B4A00FABE95 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		E2E1903F2977FCB700C951ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */,
+				E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */,
+				E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +210,15 @@
 			files = (
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
+				E2E190432977FD2500C951ED /* HomeGridCollectionViewCell.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				E2E190452977FF7600C951ED /* HomeListCollectionCell.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				E2E19049297853FF00C951ED /* AddPlaceCustomTableViewCell.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
+				E2E1904729784D5400C951ED /* AddPlaceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = 3ZD277H8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -355,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.saschasalles.appletrain.FoodLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulvayssier.FoodLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = 3ZD277H8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,7 +398,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.saschasalles.appletrain.FoodLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulvayssier.FoodLab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

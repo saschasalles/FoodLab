@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class FavoritesViewController: UIViewController {
+final class AddPlaceTableViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -22,14 +22,11 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        places = getFavoritesPlace()
         configureUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        places = getFavoritesPlace()
         tableView.reloadData()
     }
 
@@ -38,25 +35,14 @@ final class FavoritesViewController: UIViewController {
 
     // MARK: - Exposed Methods
 
-
     // MARK: - Private Properties
 
-
-    // MARK: - Private Properties
-    private var places: [Place]! {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-
-        private let cellReuseIdentifier = String(describing: FavoritesViewController.self)
 
         private lazy var tableView: UITableView = {
             let tableView = UITableView(frame: .zero, style: .insetGrouped)
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-
+            tableView.register(AddPlaceCustomTableViewCell.self, forCellReuseIdentifier: AddPlaceCustomTableViewCell.reuseIdentifier)
             tableView.dataSource = self
-            tableView.delegate = self
+//            tableView.delegate = self
 
             return tableView
         }()
@@ -89,41 +75,38 @@ final class FavoritesViewController: UIViewController {
 }
 
 // MARK: - TableViewDataSource
-extension FavoritesViewController: UITableViewDataSource {
+extension AddPlaceTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places.count
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AddPlaceCustomTableViewCell.reuseIdentifier) as? AddPlaceCustomTableViewCell else {
             return UITableViewCell()
         }
 
-        let place = places[indexPath.row]
-        cell.textLabel?.text = place.name
-        cell.imageView?.image = UIImage(named: place.imagePath)
         return cell
     }
 }
 
 // MARK: - TableViewDelegate
-extension FavoritesViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
-    ) -> UISwipeActionsConfiguration? {
-        UISwipeActionsConfiguration(actions: [
-            UIContextualAction(style: .destructive, title: "Delete", handler: { [weak self] _, _, _ in
-                guard let self else { return }
-                self.places[indexPath.row].isFavorite = false
-                self.places = self.places.filter({ $0.isFavorite })
-            })
-        ])
-    }
-}
+//extension AddPlaceTableViewController: UITableViewDelegate {
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 55
+//    }
+//
+//    func tableView(
+//        _ tableView: UITableView,
+//        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+//    ) -> UISwipeActionsConfiguration? {
+//        UISwipeActionsConfiguration(actions: [
+//            UIContextualAction(style: .destructive, title: "Delete", handler: { [weak self] _, _, _ in
+//                guard let self else { return }
+//                self.places[indexPath.row].isFavorite = false
+//                self.places = self.places.filter({ $0.isFavorite })
+//            })
+//        ])
+//    }
+//}
