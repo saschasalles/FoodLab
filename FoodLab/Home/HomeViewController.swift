@@ -39,6 +39,36 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = .systemGroupedBackground
         navigationItem.title = TabItem.home.title
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            primaryAction: nil,
+            menu: makeMenu()
+        )
+        navigationItem.rightBarButtonItem?.tintColor = .tintColor
+    }
+
+    private func makeMenu() -> UIMenu {
+        let actions: [UIAction] = [
+            UIAction(
+                title: "Add New Place",
+                handler: { [weak self] _ in
+
+                }
+            ),
+            UIAction(
+                title: "Add New Review",
+                handler: { [weak self] _ in
+
+                }
+            )
+        ]
+
+        let menu = UIMenu(
+            image: nil,
+            children: actions
+        )
+
+        return menu
     }
 }
 
