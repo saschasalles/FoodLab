@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54805342977F468000A64BB /* FavoritesTableViewCell.swift */; };
+		D5EAF820297959EF00EBDE18 /* SpaceButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */; };
 		D5ECDEB4297825E9007AAAB6 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */; };
 		D5ECDEB729782890007AAAB6 /* MultipleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */; };
 		D5ECDEB9297828AE007AAAB6 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		D54805342977F468000A64BB /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButtonTableViewCell.swift; sourceTree = "<group>"; };
 		D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceTableViewCell.swift; sourceTree = "<group>"; };
 		D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */,
 				D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */,
+				D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EAF820297959EF00EBDE18 /* SpaceButtonTableViewCell.swift in Sources */,
 				D5ECDEB729782890007AAAB6 /* MultipleChoiceTableViewCell.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */,

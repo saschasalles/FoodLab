@@ -27,7 +27,9 @@ class MultipleChoiceTableViewCell: UITableViewCell {
         button.menu = makeMenu()
         button.showsMenuAsPrimaryAction = true
 
-        button.titleLabel?.backgroundColor = .black
+        button.setTitleColor(.gray, for: .normal)
+
+        button.setImage(UIImage(systemName: "arrow.up.and.down"), for: .normal)
 
         return button
 

@@ -19,6 +19,11 @@ class AddPlaceViewController: UIViewController {
             forCellReuseIdentifier: MultipleChoiceTableViewCell.reuseIdentifier
         )
 
+        tableView.register(
+            SpaceButtonTableViewCell.self,
+            forCellReuseIdentifier: SpaceButtonTableViewCell.reuseIdentifier
+        )
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -62,7 +67,7 @@ extension AddPlaceViewController: UITableViewDelegate {
         case 1 :
             return 150
         default :
-            return 30
+            return 50
         }
     }
 
@@ -71,7 +76,7 @@ extension AddPlaceViewController: UITableViewDelegate {
 extension AddPlaceViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,9 +109,20 @@ extension AddPlaceViewController: UITableViewDataSource {
             ) as? MultipleChoiceTableViewCell else {
                 return UITableViewCell()
             }
-
             cell.configure(label: "Cook Style")
             return cell
+
+        case 3 :
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: SpaceButtonTableViewCell.reuseIdentifier
+            ) as? SpaceButtonTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(textLabel: "Add Pictures From Library", sfSymbol: "plus")
+            return cell
+
+
+
 
         default:
             return UITableViewCell()
