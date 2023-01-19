@@ -19,6 +19,7 @@ final class AddViewController: UIViewController {
         tableView.alwaysBounceVertical = true
         tableView.register(TextFieldTableViewCell.self, forCellReuseIdentifier: TextFieldTableViewCell.reuseIdentifier)
         tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.reuseIdentifier)
+        tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -84,6 +85,11 @@ extension AddViewController: UITableViewDataSource {
                     withText: addType == .review ? "Place" : "Cook Style",
                     options: addType == .review ? Place.all : CookStyle.allCases
                 )
+                return cell
+
+            case .toggle:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.reuseIdentifier) as! SwitchTableViewCell
+                cell.configure(label: "Favorite Place")
                 return cell
             default:
                 return UITableViewCell()

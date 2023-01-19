@@ -15,8 +15,9 @@ class MenuTableViewCell: UITableViewCell {
 
     // MARK: - Private Properties
 
-    private let padding: CGFloat = 12
-    private let textField: UITextField = UITextField(frame: .zero)
+    private let horizontalPadding: CGFloat = 12
+    private let verticalPadding: CGFloat = 8
+    private let labelItem: UILabel = UILabel(frame: .zero)
     private let buttonMenu: UIButton = {
         let button = UIButton()
         button.setTitleColor(.secondaryLabel, for: .normal)
@@ -39,7 +40,7 @@ class MenuTableViewCell: UITableViewCell {
     // MARK: - Exposed Methods
 
     func configure(withText text: String, options: [any PickerIdentifiable]) {
-        textField.text = text
+        labelItem.text = text
         buttonMenu.showsMenuAsPrimaryAction = true
         let actions: [UIAction] = options.map { option in
             UIAction(
@@ -57,20 +58,22 @@ class MenuTableViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     func configureUI() {
-        contentView.addSubview(textField)
+        contentView.addSubview(labelItem)
         contentView.addSubview(buttonMenu)
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        labelItem.translatesAutoresizingMaskIntoConstraints = false
         buttonMenu.translatesAutoresizingMaskIntoConstraints = false
-        textField.sizeToFit()
+        labelItem.sizeToFit()
         buttonMenu.sizeToFit()
 
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            labelItem.topAnchor.constraint(equalTo: contentView.topAnchor),
+            labelItem.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            labelItem.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: horizontalPadding),
+            labelItem.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
-            buttonMenu.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            buttonMenu.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            buttonMenu.topAnchor.constraint(equalTo: contentView.topAnchor, constant: verticalPadding),
+            buttonMenu.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -verticalPadding),
+            buttonMenu.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -horizontalPadding),
             buttonMenu.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4),
             buttonMenu.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
         ])

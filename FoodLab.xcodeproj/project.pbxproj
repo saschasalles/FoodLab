@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B1AFC529797E6C000A68A9 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1AFC429797E6C000A68A9 /* SwitchTableViewCell.swift */; };
 		15E3A5DE29780026009100A6 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5DD29780026009100A6 /* FavoriteTableViewCell.swift */; };
 		15E3A5E129780639009100A6 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5E029780639009100A6 /* PlacesTableViewCell.swift */; };
 		15E3A5E429781E05009100A6 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E3A5E329781E05009100A6 /* HeaderCollectionReusableView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15B1AFC429797E6C000A68A9 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		15E3A5DD29780026009100A6 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		15E3A5E029780639009100A6 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		15E3A5E329781E05009100A6 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				15E3A5F3297854F3009100A6 /* TextFieldTableViewCell.swift */,
 				15E3A5F5297970ED009100A6 /* MenuTableViewCell.swift */,
+				15B1AFC429797E6C000A68A9 /* SwitchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				15E3A5DE29780026009100A6 /* FavoriteTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
+				15B1AFC529797E6C000A68A9 /* SwitchTableViewCell.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				15E3A5F6297970ED009100A6 /* MenuTableViewCell.swift in Sources */,
 				15E3A5E129780639009100A6 /* PlacesTableViewCell.swift in Sources */,
