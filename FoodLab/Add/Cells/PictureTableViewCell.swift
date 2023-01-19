@@ -24,8 +24,9 @@ class PictureTableViewCell: UITableViewCell {
     }()
     private lazy var button = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.setImage(UIImage(systemName: "plus"), for: .disabled)
         button.tintColor = .tintColor
+        button.isEnabled = false
         return button
     }()
 
