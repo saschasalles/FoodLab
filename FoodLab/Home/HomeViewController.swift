@@ -35,10 +35,21 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Private Methods
 
+
+
+
+
+
     private func configureUI() {
         view.backgroundColor = .systemGroupedBackground
         navigationItem.title = TabItem.home.title
         navigationController?.navigationBar.prefersLargeTitles = true
+
     }
+
+
+
+
 }
+
 

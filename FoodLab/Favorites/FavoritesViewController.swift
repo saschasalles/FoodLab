@@ -19,9 +19,9 @@ final class FavoritesViewController: UIViewController {
     }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         configureUI()
     }
 
@@ -42,4 +42,3 @@ final class FavoritesViewController: UIViewController {
         navigationItem.title = TabItem.favs.title
     }
 }
-

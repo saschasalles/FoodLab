@@ -16,6 +16,10 @@
 		DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* FavoritesViewController.swift */; };
 		DC2079582977625500FABE95 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079572977625500FABE95 /* Place.swift */; };
 		DC20795A2977636A00FABE95 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079592977636A00FABE95 /* Review.swift */; };
+		F3C398FF2978065700361817 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C398FE2978065700361817 /* HomeView.swift */; };
+		F3C399012978084E00361817 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C399002978084E00361817 /* Data.swift */; };
+		F3C3990529783DF000361817 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3990429783DF000361817 /* FavoritesView.swift */; };
+		F3C399082978467E00361817 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C399072978467E00361817 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC2079572977625500FABE95 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DC2079592977636A00FABE95 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		F3C398FE2978065700361817 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F3C399002978084E00361817 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F3C3990429783DF000361817 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		F3C399072978467E00361817 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				F3C399062978466800361817 /* Test */,
 				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
@@ -97,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
+				F3C398FE2978065700361817 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DC20794B297741D500FABE95 /* TabItem.swift */,
+				F3C399002978084E00361817 /* Data.swift */,
 				DC2079572977625500FABE95 /* Place.swift */,
 				DC2079592977636A00FABE95 /* Review.swift */,
 			);
@@ -122,8 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
+				F3C3990429783DF000361817 /* FavoritesView.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		F3C399062978466800361817 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				F3C399072978467E00361817 /* TestView.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,12 +216,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C3990529783DF000361817 /* FavoritesView.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				F3C399082978467E00361817 /* TestView.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				F3C398FF2978065700361817 /* HomeView.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				F3C399012978084E00361817 /* Data.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
