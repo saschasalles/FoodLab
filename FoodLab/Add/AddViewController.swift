@@ -17,7 +17,8 @@ final class AddViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .systemGroupedBackground
         tableView.alwaysBounceVertical = true
-        tableView.register(TextFieldCollectionViewCell.self, forCellReuseIdentifier: TextFieldCollectionViewCell.reuseIdentifier)
+        tableView.register(TextFieldTableViewCell.self, forCellReuseIdentifier: TextFieldTableViewCell.reuseIdentifier)
+        tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -65,25 +66,48 @@ extension AddViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TextFieldCollectionViewCell.reuseIdentifier
-            ) as? TextFieldCollectionViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(placeholder: addType == .review ? "Title" : "Place Name")
-            return cell
-        } else if indexPath.row == 1 {
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TextFieldCollectionViewCell.reuseIdentifier
-            ) as? TextFieldCollectionViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(placeholder: addType == .review ? "Content" : "Description", heightSize: 50)
-            return cell
-        }
+        do {
+            let item = try getItemForRow(at: indexPath.row)
+            switch item {
+            case .textField:
+                let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.reuseIdentifier) as! TextFieldTableViewCell
+                if indexPath.row == 0 {
+                    cell.configure(placeholder: addType == .review ? "Title" : "Place Name")
+                } else {
+                    cell.configure(placeholder: addType == .review ? "Content" : "Description")
+                }
+                return cell
 
-        return UITableViewCell()
+            case .picker:
+                let cell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.reuseIdentifier) as! MenuTableViewCell
+                cell.configure(
+                    withText: addType == .review ? "Place" : "Cook Style",
+                    options: addType == .review ? Place.all : CookStyle.allCases
+                )
+                return cell
+            default:
+                return UITableViewCell()
+            }
+        } catch {
+            return UITableViewCell()
+        }
+    }
+
+    private func getItemForRow(at row: Int) throws -> FieldType {
+        switch row {
+        case 0:
+            return .textField
+        case 1:
+            return .textField
+        case 2:
+            return .picker
+        case 3:
+            return addType == .review ? .picture : .toggle
+        case 4:
+            return .picture
+        default:
+            throw "Error"
+        }
     }
 }
 
@@ -93,5 +117,7 @@ enum AddType: String {
 }
 
 enum FieldType {
-    case textField, picker, picture, addButton
+    case textField, picker, picture, addButton, toggle
 }
+
+extension String: Error {}

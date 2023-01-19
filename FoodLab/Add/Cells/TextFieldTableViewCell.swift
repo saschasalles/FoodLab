@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class TextFieldCollectionViewCell: UITableViewCell {
+final class TextFieldTableViewCell: UITableViewCell {
 
     // MARK: - Exposed Properties
 
-    static let reuseIdentifier = String(describing: TextFieldCollectionViewCell.self)
+    static let reuseIdentifier = String(describing: TextFieldTableViewCell.self)
 
     // MARK: - Private Properties
 
@@ -31,10 +31,9 @@ final class TextFieldCollectionViewCell: UITableViewCell {
 
     // MARK: - Exposed Methods
 
-    func configure(placeholder: String, heightSize: CGFloat? = nil) {
+    // TODO: faire varier la taille avec un nouveau paramètre
+    func configure(placeholder: String) {
         textField.placeholder = placeholder
-        guard let heightSize else { return }
-        // TODO: faire varier la taille en fonction du `heightSize`
     }
 
     // MARK: - Private Methods

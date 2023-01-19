@@ -68,6 +68,16 @@ class Place: Identifiable {
     }
 }
 
+extension Place: PickerIdentifiable {
+    func getId() -> UUID {
+        return id
+    }
+    
+    func getText() -> String {
+        return name
+    }
+}
+
 extension Place: Equatable, Hashable {
     static func == (lhs: Place, rhs: Place) -> Bool {
         return lhs.id == rhs.id
@@ -78,10 +88,18 @@ extension Place: Equatable, Hashable {
     }
 }
 
-enum CookStyle: String, CaseIterable {
+enum CookStyle: String, CaseIterable, PickerIdentifiable {
     case french = "French"
     case fineDining = "Fine Dining"
     case indian = "Indian"
     case asian = "Asian"
     case fastfood = "Fast Food"
+
+    func getId() -> UUID {
+        return UUID()
+    }
+
+    func getText() -> String {
+        return rawValue
+    }
 }

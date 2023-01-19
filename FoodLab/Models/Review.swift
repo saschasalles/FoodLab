@@ -30,3 +30,13 @@ class Review: Identifiable {
         Review(placeId: Place.all[2].id, title: "Mitigé !", content: "Lorem ipsum dolor sit amet", imagePaths: ["food-3"], rate: 3)
     ]
 }
+
+extension Review: PickerIdentifiable {
+    func getId() -> UUID {
+        return id
+    }
+
+    func getText() -> String {
+        return title
+    }
+}
