@@ -8,9 +8,15 @@
 import UIKit
 
 final class AddViewController: UIViewController {
+
+    // MARK: - Exposed Properties
+
     var addType: AddType
 
     // MARK: - UI Properties
+
+    private let padding: CGFloat = 16
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.dataSource = self
@@ -20,7 +26,14 @@ final class AddViewController: UIViewController {
         tableView.register(TextFieldTableViewCell.self, forCellReuseIdentifier: TextFieldTableViewCell.reuseIdentifier)
         tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: MenuTableViewCell.reuseIdentifier)
         tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.reuseIdentifier)
+        tableView.register(PictureTableViewCell.self, forCellReuseIdentifier: PictureTableViewCell.reuseIdentifier)
         return tableView
+    }()
+
+    private lazy var addButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.tintColor = .tintColor
+        return button
     }()
 
     // MARK: - Lifecycle
@@ -44,13 +57,22 @@ final class AddViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .systemGroupedBackground
         navigationItem.title = "Add \(addType.rawValue)"
+        addButton.setTitle("Add \(addType == .review ? "Review" : "Place")", for: .normal)
         view.addSubview(tableView)
+        view.addSubview(addButton)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+
+            addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: padding),
+            addButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: padding),
+            addButton.widthAnchor.constraint(equalTo: view.widthAnchor, constant: padding)
         ])
     }
 }
@@ -58,6 +80,14 @@ final class AddViewController: UIViewController {
 extension AddViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        do {
+            let item = try getItemForRow(at: indexPath.row)
+            if item == .picture {
+                let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true)
+            }
+        } catch { }
     }
 }
 
@@ -90,6 +120,10 @@ extension AddViewController: UITableViewDataSource {
             case .toggle:
                 let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.reuseIdentifier) as! SwitchTableViewCell
                 cell.configure(label: "Favorite Place")
+                return cell
+
+            case .picture:
+                let cell = tableView.dequeueReusableCell(withIdentifier: PictureTableViewCell.reuseIdentifier) as! PictureTableViewCell
                 return cell
             default:
                 return UITableViewCell()
