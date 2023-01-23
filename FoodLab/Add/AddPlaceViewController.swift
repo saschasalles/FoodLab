@@ -9,6 +9,12 @@ import UIKit
 
 class AddPlaceViewController: UIViewController {
 
+    var numberRowInSectionOne = 4
+
+    var picture: UIImage = {
+        return UIImage()
+    }()
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
@@ -22,6 +28,16 @@ class AddPlaceViewController: UIViewController {
         tableView.register(
             SpaceButtonTableViewCell.self,
             forCellReuseIdentifier: SpaceButtonTableViewCell.reuseIdentifier
+        )
+
+        tableView.register(
+            ImageTableViewCell.self,
+            forCellReuseIdentifier: ImageTableViewCell.reuseIdentifier
+        )
+
+        tableView.register(
+            ButtonTableViewCell.self,
+            forCellReuseIdentifier: ButtonTableViewCell.reuseIdentifier
         )
 
         tableView.dataSource = self
@@ -60,12 +76,22 @@ extension AddPlaceViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        if indexPath.row == 3 {
+            let picController = UIImagePickerController()
+            picController.sourceType = .camera
+            picController.allowsEditing = true
+            picController.delegate = self
+            present(picController, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 1 :
             return 150
+        case 4 :
+            return 400
         default :
             return 50
         }
@@ -75,57 +101,124 @@ extension AddPlaceViewController: UITableViewDelegate {
 
 extension AddPlaceViewController: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ?  numberRowInSectionOne :  1
+    }
+
+
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+
+        if indexPath.section == 1 {
+            return getButtonCell()
+        }
 
         switch indexPath.row {
 
         case 0 :
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TextFieldTableViewCell.reuseIdentifier
-            ) as? TextFieldTableViewCell else {
-                return UITableViewCell()
-            }
-
-            cell.configure(placeholder: "Place name")
-            return cell
+            return getTextViewCell(placeholder: "Place name")
 
         case 1 :
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TextFieldTableViewCell.reuseIdentifier
-            ) as? TextFieldTableViewCell else {
-                return UITableViewCell()
-            }
-
-            cell.configure(placeholder: "Description")
-            return cell
+            return getTextViewCell(placeholder: "Description")
 
         case 2 :
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: MultipleChoiceTableViewCell.reuseIdentifier
-            ) as? MultipleChoiceTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(label: "Cook Style")
-            return cell
+            return getMultipleChoiceCell()
 
         case 3 :
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SpaceButtonTableViewCell.reuseIdentifier
-            ) as? SpaceButtonTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.configure(textLabel: "Add Pictures From Library", sfSymbol: "plus")
-            return cell
+            return getSpaceButtonCell()
 
-
-
-
+        case 4 :
+            return getImageCell()
         default:
             return UITableViewCell()
         }
     }
+}
+
+extension AddPlaceViewController: UINavigationControllerDelegate {
+
+}
+
+extension AddPlaceViewController: UIImagePickerControllerDelegate {
+
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+
+        print(image.size)
+
+        numberRowInSectionOne = 5
+
+        picture = image
+
+        tableView.reloadData()
+
+        picker.dismiss(animated: true)
+    }
+}
+
+extension AddPlaceViewController {
+
+    func getButtonCell() -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ButtonTableViewCell.reuseIdentifier
+        ) as? ButtonTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(title: "Add place")
+
+        return cell
+    }
+
+    func getTextViewCell(placeholder: String) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TextFieldTableViewCell.reuseIdentifier
+        ) as? TextFieldTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(placeholder: placeholder)
+        return cell
+    }
+
+    func getMultipleChoiceCell() -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: MultipleChoiceTableViewCell.reuseIdentifier
+        ) as? MultipleChoiceTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(label: "Cook Style")
+        return cell
+    }
+
+    func getSpaceButtonCell() -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SpaceButtonTableViewCell.reuseIdentifier
+        ) as? SpaceButtonTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(textLabel: "Add Pictures From Library", sfSymbol: "plus")
+        return cell
+    }
+
+    func getImageCell() -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: ImageTableViewCell.reuseIdentifier
+        ) as? ImageTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(image: picture)
+        return cell
+    }
+
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54805342977F468000A64BB /* FavoritesTableViewCell.swift */; };
+		D5863B7A297E559300CD7C3F /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5863B79297E559300CD7C3F /* ImageTableViewCell.swift */; };
+		D5863B7C297E59B100CD7C3F /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5863B7B297E59B100CD7C3F /* ButtonTableViewCell.swift */; };
 		D5EAF820297959EF00EBDE18 /* SpaceButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */; };
 		D5ECDEB4297825E9007AAAB6 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */; };
 		D5ECDEB729782890007AAAB6 /* MultipleChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		D54805342977F468000A64BB /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		D5863B79297E559300CD7C3F /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		D5863B7B297E59B100CD7C3F /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceButtonTableViewCell.swift; sourceTree = "<group>"; };
 		D5ECDEB3297825E9007AAAB6 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiceTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				D5ECDEB629782890007AAAB6 /* MultipleChoiceTableViewCell.swift */,
 				D5ECDEB8297828AE007AAAB6 /* TextFieldTableViewCell.swift */,
 				D5EAF81F297959EF00EBDE18 /* SpaceButtonTableViewCell.swift */,
+				D5863B79297E559300CD7C3F /* ImageTableViewCell.swift */,
+				D5863B7B297E59B100CD7C3F /* ButtonTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -262,9 +268,11 @@
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */,
 				D5ECDEB9297828AE007AAAB6 /* TextFieldTableViewCell.swift in Sources */,
+				D5863B7C297E59B100CD7C3F /* ButtonTableViewCell.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				D5ECDEB4297825E9007AAAB6 /* AddPlaceViewController.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
+				D5863B7A297E559300CD7C3F /* ImageTableViewCell.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
@@ -337,7 +345,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -392,7 +400,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = FoodLab/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -409,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = W5GL4YVL8D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -436,7 +444,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = W5GL4YVL8D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
