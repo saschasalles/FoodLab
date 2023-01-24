@@ -49,8 +49,6 @@ class AddPlaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
-        // Do any additional setup after loading the view.
     }
 
     func configureUI() {
@@ -109,7 +107,6 @@ extension AddPlaceViewController: UITableViewDataSource {
         return section == 0 ?  numberRowInSectionOne :  1
     }
 
-
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
@@ -122,10 +119,10 @@ extension AddPlaceViewController: UITableViewDataSource {
         switch indexPath.row {
 
         case 0 :
-            return getTextViewCell(placeholder: "Place name")
+            return getTextViewCell(placeholder: "Place name", returnKeyType: .next)
 
         case 1 :
-            return getTextViewCell(placeholder: "Description")
+            return getTextViewCell(placeholder: "Description", returnKeyType: .continue)
 
         case 2 :
             return getMultipleChoiceCell()
@@ -155,9 +152,6 @@ extension AddPlaceViewController: UIImagePickerControllerDelegate {
             print("No image found")
             return
         }
-
-        print(image.size)
-
         numberRowInSectionOne = 5
 
         picture = image
@@ -181,13 +175,24 @@ extension AddPlaceViewController {
         return cell
     }
 
-    func getTextViewCell(placeholder: String) -> UITableViewCell {
+    func getTextViewCell(placeholder: String, returnKeyType: UIReturnKeyType) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: TextFieldTableViewCell.reuseIdentifier
         ) as? TextFieldTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(placeholder: placeholder)
+
+        let nextFocus = {
+            if let cellFocuse = self.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? TextFieldTableViewCell {
+                returnKeyType == .next ? cellFocuse.textField.becomeFirstResponder() : self.view.endEditing(true)
+
+            }
+        }
+
+        cell.configure(
+            placeholder: placeholder,
+            returnKeyType: returnKeyType ,
+            closure: nextFocus)
         return cell
     }
 

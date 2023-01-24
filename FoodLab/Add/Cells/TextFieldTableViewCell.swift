@@ -21,10 +21,14 @@ class TextFieldTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let textFied = UITextField()
+        textFied.addTarget(self, action: #selector(nextKeyboardFunc), for: .editingDidEndOnExit)
+
         return textFied
     }()
+
+    private var nextKeyboardClosure : (() -> Void)?
 
     let padding: CGFloat = 5
 
@@ -52,8 +56,21 @@ class TextFieldTableViewCell: UITableViewCell {
         ])
     }
 
-    func configure(placeholder: String) {
+    func configure(
+        placeholder: String,
+        returnKeyType: UIReturnKeyType,
+        closure:  @escaping () -> Void
+    ) {
         textField.placeholder = placeholder
+        textField.enablesReturnKeyAutomatically = true
+        textField.returnKeyType = returnKeyType
+        nextKeyboardClosure = closure
+    }
+
+    @objc func nextKeyboardFunc() {
+        if let nextKeyboardClosure = nextKeyboardClosure {
+            nextKeyboardClosure()
+        }
     }
 
 }
