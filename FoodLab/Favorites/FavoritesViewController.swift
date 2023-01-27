@@ -18,166 +18,109 @@ final class FavoritesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Data
-
-    private var places: [Place]! {
-        didSet {
-            collectionView.reloadData()
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
     }
-
-    // MARK: - Collection View
-
-    private let padding: CGFloat = 16
-
-    private lazy var listLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.width - padding * 2, height: 70)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 10, left: padding, bottom: 10, right: padding)
-
-        return layout
-    }()
-
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: listLayout
-        )
-
-        collectionView.register(
-            FavoritesListCollectionViewCell.self,
-            forCellWithReuseIdentifier: FavoritesListCollectionViewCell.reuseIdentifier
-        )
-
-        collectionView.backgroundColor = .systemGroupedBackground
-        collectionView.alwaysBounceVertical = true
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
-        return collectionView
-    }()
-
-    // MARK: - Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        places = getFavoritePlace()
-        configureUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        places = getFavoritePlace()
-        collectionView.reloadData()
-    }
-
-    // MARK: - Exposed Properties
-
-
-    // MARK: - Exposed Methods
-
 
     // MARK: - Private Properties
+        private var places: [Place]! {
+            didSet {
+                tableView.reloadData()
+            }
+        }
 
+        private let cellReuseIdentifier = "favoritesCellReuseIdentifier"
 
-    // MARK: - Private Methods
+        private let padding: CGFloat = 16
 
-    private func configureUI() {
-        view.addSubview(collectionView)
+        private lazy var tableView: UITableView = {
+            let tableView = UITableView(
+                frame: .zero,
+                style: .insetGrouped
+            )
 
-        view.backgroundColor = .systemGroupedBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = TabItem.favs.title
+            tableView.register(
+                FavoritesListTableViewCell.self,
+                forCellReuseIdentifier: FavoritesListTableViewCell.reuseIdentifier)
 
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.dataSource = self
+            tableView.delegate = self
 
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
-        ])
-    }
+            return tableView
+        }()
 
-    private func getFavoritePlace() -> [Place] {
-        Place.all.filter(\.isFavorite)
-    }
-}
+        // MARK: - LifeCycle
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            places = getFavoritesPlace()
+            configureUI()
+        }
 
-// MARK: - CollectionViewDataSource
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
 
-extension FavoritesViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return places.count
-    }
+            places = getFavoritesPlace()
+            tableView.reloadData()
+        }
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        contextMenuConfigurationForItemsAt indexPaths: [IndexPath],
-        point: CGPoint
-    ) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(actionProvider: { _ in
-            return UIMenu(children: [
-                UIAction(title: "Remove", attributes: .destructive) { [weak self] _ in
-                    self?.places[indexPaths[0].row].setFavorite(false)
-                    collectionView.reloadData()
-                    self?.places = self?.getFavoritePlace()
-                    print(self?.places[indexPaths[0].row].isFavorite)
-                }
+        // MARK: - Private Methods
+        private func configureUI() {
+            view.addSubview(tableView)
+
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.title = TabItem.favs.title
+
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+
+            NSLayoutConstraint.activate([
+                tableView.topAnchor.constraint(equalTo: view.topAnchor),
+                tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
             ])
-        })
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-
-        let place = places[indexPath.row]
-
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: FavoritesListCollectionViewCell.reuseIdentifier,
-            for: indexPath
-        ) as? FavoritesListCollectionViewCell else {
-            return UICollectionViewCell()
         }
 
-        if place == places.first {
-            cell.contentView.layer.maskedCorners = [
-                .layerMinXMinYCorner,
-                .layerMaxXMinYCorner
-            ]
-            cell.contentView.layer.cornerRadius = 12
-            cell.contentView.layer.cornerCurve = .continuous
-        } else if place == places.last {
-            cell.contentView.layer.maskedCorners = [
-                .layerMinXMaxYCorner,
-                .layerMaxXMaxYCorner
-            ]
-            cell.contentView.layer.cornerCurve = .continuous
-            cell.contentView.layer.cornerRadius = 12
-        } else {
-            cell.contentView.layer.cornerRadius = 0
+        private func getFavoritesPlace() -> [Place] {
+            Place.all.filter(\.isFavorite)
+        }
+    }
+
+    // MARK: - TableViewDataSource
+    extension FavoritesViewController: UITableViewDataSource {
+
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return places.count
         }
 
-        cell.configure(place: place)
-        return cell
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesListTableViewCell.reuseIdentifier) else {
+                return UITableViewCell()
+            }
 
+            // TODO : Utilise la méthode configure dans FavoritesListTableViewCell plutot que ca
+            let place = places[indexPath.row]
+            cell.textLabel?.text = place.name
+            cell.imageView?.image = UIImage(named: place.imagePath)
+
+            return cell
+        }
     }
-}
 
-// MARK: - CollectionViewDelegate
-
-extension FavoritesViewController: UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        let place = places[indexPath.row]
-    }
+    // MARK: - TableViewDelegate
+    extension FavoritesViewController: UITableViewDelegate {
+        func tableView(
+            _ tableView: UITableView,
+            trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+        ) -> UISwipeActionsConfiguration? {
+            UISwipeActionsConfiguration(actions: [
+                UIContextualAction(style: .destructive, title: "Remove", handler: { [weak self] _, _, _ in
+                    guard let self else { return }
+                    let placeName = self.places[indexPath.row].name
+                    self.places = self.places.filter({ $0.name != placeName })
+                })
+            ])
+        }
 }
 
 

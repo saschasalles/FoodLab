@@ -24,3 +24,19 @@ En ce qui concerne la collection view des favoris j'ai juste repris celle de Mat
 Personnellement je pense il me faut encore du temps et BEAUCOUP de pratique comme pour tout mdr. Je trouve trop intéressant tout ce qu'on peut faire ca donne envie d'apprendre mais peut être un peu plus à mon rythme plus tard.
 
 Hâte de voir la correction du tp
+
+
+## Vendredi 27 Janvier 2023 : 
+
+J'ai inverser les View: la home est devenue une collectionView et les favoris une tableViewCell
+
+J'ai également passer le model Place de struct à class afin que demain je puisse faire un remove correct
+
+Il faudrait aussi que je fasse en sorte que les favoris soient plus jolis.
+
+Honnetement je ne pense pas pouvoir faire de miracle demain sur les modals. Si j'arrive déjà à en générer une ca serait un putain d'exploit mdr.
+Il y a surement moyen, en s'inspirant du passage de grid à list de MatchLab à pouvoir faire un truc intéressant pour les modals mais je n'ai pas encore vu quoi. 
+
+J'essaye vraiment d'utiliser la doc Apple et de comprendre le code de match lab pour pouvoir vraiment apprendre. Le fait de ne pas trop utiliser internet et pas du tout chatGPT me permet de mieux comprendre certaines choses. La plus importante étant que la doc Apple est vraiment indigeste et manque d'exemples mdrrrr. 
+
+

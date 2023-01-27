@@ -22,6 +22,15 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        places = Place.all
+    }
+
+    // MARK: - Data
+
+    private var places: [Place]! {
+        didSet {
+            collectionView.reloadData()
+        }
     }
 
     // MARK: - Menu
@@ -86,58 +95,144 @@ final class HomeViewController: UIViewController {
 
     // MARK: - TableView
 
-    private let tableView: UITableView = {
-        let table = UITableView()
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(CustomTableViewCell.self,
-                       forCellReuseIdentifier: CustomTableViewCell.identifier)
-        return table
+//    private let tableView: UITableView = {
+//        let table = UITableView()
+//        table.translatesAutoresizingMaskIntoConstraints = false
+//        table.register(CustomTableViewCell.self,
+//                       forCellReuseIdentifier: CustomTableViewCell.identifier)
+//        return table
+//    }()
+
+    // MARK: - Collection View
+
+    private let padding: CGFloat = 16
+
+    private lazy var listLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.frame.width - padding * 2, height: 70)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.sectionInset = UIEdgeInsets(top: 10, left: padding, bottom: 10, right: padding)
+
+        return layout
+    }()
+
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: listLayout
+        )
+
+        collectionView.register(
+            HomeCollectionViewCell.self,
+            forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier
+        )
+
+        collectionView.backgroundColor = .systemGroupedBackground
+        collectionView.alwaysBounceVertical = true
+        collectionView.dataSource = self
+
+        return collectionView
     }()
 
     // MARK: - Private Methods
 
     private func configureUI() {
-        view.backgroundColor = .gray
-        navigationItem.title = TabItem.home.title
-        navigationController?.navigationBar.prefersLargeTitles = true
-        view.addSubview(tableView)
-        tableView.dataSource = self
-        tableView.delegate = self
         setBarButtonItem()
+
+        view.addSubview(collectionView)
+
+        view.backgroundColor = .systemGroupedBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = TabItem.home.title
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
     }
 
     // MARK: - Override
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        listLayout.frame = view.bounds
+//    }
 }
 
 // MARK: DataSource && Delegate
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Place.all.count
+//extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return Place.all.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(
+//            withIdentifier: CustomTableViewCell.identifier,
+//            for: indexPath) as? CustomTableViewCell else {
+//                return UITableViewCell()
+//            }
+//
+//        let index: Place = Place.all[indexPath.row]
+//        let placeName: String = index.name
+//        let placeImage: String = index.imagePath
+//
+//        cell.configure(text: placeName, imageName: placeImage)
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
+//}
+
+
+// MARK: - CollectionViewDataSource
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return places.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: CustomTableViewCell.identifier,
-            for: indexPath) as? CustomTableViewCell else {
-                return UITableViewCell()
-            }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
 
-        let index: Place = Place.all[indexPath.row]
-        let placeName: String = index.name
-        let placeImage: String = index.imagePath
+        let place = places[indexPath.row]
 
-        cell.configure(text: placeName, imageName: placeImage)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier,
+            for: indexPath
+        ) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
+        if place == places.first {
+            cell.contentView.layer.maskedCorners = [
+                .layerMinXMinYCorner,
+                .layerMaxXMinYCorner
+            ]
+            cell.contentView.layer.cornerRadius = 12
+            cell.contentView.layer.cornerCurve = .continuous
+        } else if place == places.last {
+            cell.contentView.layer.maskedCorners = [
+                .layerMinXMaxYCorner,
+                .layerMaxXMaxYCorner
+            ]
+            cell.contentView.layer.cornerCurve = .continuous
+            cell.contentView.layer.cornerRadius = 12
+        } else {
+            cell.contentView.layer.cornerRadius = 0
+        }
+
+        cell.configure(place: place)
         return cell
-    }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }
-
