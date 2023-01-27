@@ -16,6 +16,14 @@ final class FavoritesViewController: UIViewController {
             }
         }
 
+        init() {
+            super.init(nibName: nil, bundle: nil)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -38,6 +46,8 @@ final class FavoritesViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
 
+        tableView.backgroundColor = .red
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -47,11 +57,14 @@ final class FavoritesViewController: UIViewController {
     // MARK: - Private Methods
 
     private func configureUI() {
+        view.addSubview(tableView)
+
         view.backgroundColor = .systemGroupedBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = TabItem.favs.title
 
-        view.addSubview(tableView)
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private func getFavorites() -> [Place] {
@@ -65,7 +78,7 @@ final class FavoritesViewController: UIViewController {
     // MARK: - Exposed Methods
 
 
-    //MARK: - TableView Delegate
+    //MARK: - TableView Datasource
 
 extension FavoritesViewController: UITableViewDataSource {
 
@@ -75,24 +88,20 @@ extension FavoritesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.reuseIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.reuseIdentifier) as? FavoritesTableViewCell else {
             return UITableViewCell()
         }
 
         let place = places[indexPath.row]
-        cell.textLabel?.text = place.name
+        cell.configure(place: place)
 
         return cell
     }
 }
 
-    //MARK: - TableView Datasource
+    //MARK: - TableView Delegate
 
 extension FavoritesViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
-    }
 
     func tableView(
         _ tableView: UITableView,

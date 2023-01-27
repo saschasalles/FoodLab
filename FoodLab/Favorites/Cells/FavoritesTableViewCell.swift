@@ -33,7 +33,7 @@ class FavoritesTableViewCell: UITableViewCell {
             }
         }
 
-    private lazy var _imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
         imageView.layer.cornerCurve = .continuous
@@ -65,6 +65,6 @@ class FavoritesTableViewCell: UITableViewCell {
 
     func configure(place: Place) {
         titleLabel.text = place.name
-        imageView?.image = UIImage(named: place.imagePath)
+        image.image = UIImage(named: place.imagePath)
     }
 }
