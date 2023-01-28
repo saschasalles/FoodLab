@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52DFBD32983993000F6E005 /* HomeReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52DFBD22983993000F6E005 /* HomeReviewCollectionViewCell.swift */; };
 		D54805352977F468000A64BB /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54805342977F468000A64BB /* FavoritesTableViewCell.swift */; };
 		D5863B7A297E559300CD7C3F /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5863B79297E559300CD7C3F /* ImageTableViewCell.swift */; };
 		D5863B7C297E59B100CD7C3F /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5863B7B297E59B100CD7C3F /* ButtonTableViewCell.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D52DFBD22983993000F6E005 /* HomeReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		D54805342977F468000A64BB /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		D5863B79297E559300CD7C3F /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		D5863B7B297E59B100CD7C3F /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D52DFBCE2983971F00F6E005 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D52DFBD22983993000F6E005 /* HomeReviewCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		D54805332977F437000A64BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D52DFBCE2983971F00F6E005 /* cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -277,6 +288,7 @@
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
+				D52DFBD32983993000F6E005 /* HomeReviewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

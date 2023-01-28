@@ -18,5 +18,10 @@ struct Review: Identifiable {
     var rate: Int
 
     static var all: [Self] = [
+        Review(placeId: Place.all.first!.id, title: "La 1ere review", content: "Le content de la 1ere review", imagePaths: ["food-1"], rate: 6),
+        Review(placeId: Place.all.first!.id, title: "La 1ere review", content: "Le content de la 1ere review", imagePaths: ["food-1"], rate: 6),
+        Review(placeId: Place.all.first!.id, title: "La 1ere review", content: "Le content de la 1ere review", imagePaths: ["food-1"], rate: 6),
+        Review(placeId: Place.all.first!.id, title: "La 1ere review", content: "Le content de la 1ere review", imagePaths: ["food-1"], rate: 6),
+        Review(placeId: Place.all.first!.id, title: "La 1ere review", content: "Le content de la 1ere review", imagePaths: ["food-1"], rate: 6)
     ]
 }

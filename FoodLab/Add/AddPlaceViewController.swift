@@ -212,7 +212,7 @@ extension AddPlaceViewController {
         ) as? SpaceButtonTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(textLabel: "Add Pictures From Library", sfSymbol: "plus")
+        cell.configure(textLabel: "Take picture", sfSymbol: "plus")
         return cell
     }
 
