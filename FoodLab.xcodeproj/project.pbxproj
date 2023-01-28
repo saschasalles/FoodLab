@@ -16,10 +16,14 @@
 		DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* FavoritesViewController.swift */; };
 		DC2079582977625500FABE95 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079572977625500FABE95 /* Place.swift */; };
 		DC20795A2977636A00FABE95 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079592977636A00FABE95 /* Review.swift */; };
+		E21F9AE9297F252100C3CA20 /* PickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F9AE8297F252100C3CA20 /* PickerViewTableViewCell.swift */; };
+		E21F9AEB297F2C6E00C3CA20 /* SwitchButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F9AEA297F2C6E00C3CA20 /* SwitchButtonTableViewCell.swift */; };
+		E2CB25972985C70900C17B99 /* AddReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CB25962985C70900C17B99 /* AddReviewTableViewController.swift */; };
 		E2E190432977FD2500C951ED /* HomeGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */; };
 		E2E190452977FF7600C951ED /* HomeListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */; };
 		E2E1904729784D5400C951ED /* AddPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */; };
-		E2E19049297853FF00C951ED /* AddPlaceCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */; };
+		E2E19049297853FF00C951ED /* TextFieldCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E19048297853FF00C951ED /* TextFieldCustomTableViewCell.swift */; };
+		E2E1904B2978AE1F00C951ED /* ButtonCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E1904A2978AE1F00C951ED /* ButtonCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +39,14 @@
 		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC2079572977625500FABE95 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DC2079592977636A00FABE95 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		E21F9AE8297F252100C3CA20 /* PickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		E21F9AEA297F2C6E00C3CA20 /* SwitchButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonTableViewCell.swift; sourceTree = "<group>"; };
+		E2CB25962985C70900C17B99 /* AddReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewTableViewController.swift; sourceTree = "<group>"; };
 		E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCollectionCell.swift; sourceTree = "<group>"; };
 		E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceTableViewController.swift; sourceTree = "<group>"; };
-		E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCustomTableViewCell.swift; sourceTree = "<group>"; };
+		E2E19048297853FF00C951ED /* TextFieldCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomTableViewCell.swift; sourceTree = "<group>"; };
+		E2E1904A2978AE1F00C951ED /* ButtonCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 				E2E1903F2977FCB700C951ED /* Cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 				E2E1904629784D5400C951ED /* AddPlaceTableViewController.swift */,
+				E2CB25962985C70900C17B99 /* AddReviewTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -133,7 +142,10 @@
 			children = (
 				E2E190422977FD2500C951ED /* HomeGridCollectionViewCell.swift */,
 				E2E190442977FF7600C951ED /* HomeListCollectionCell.swift */,
-				E2E19048297853FF00C951ED /* AddPlaceCustomTableViewCell.swift */,
+				E2E19048297853FF00C951ED /* TextFieldCustomTableViewCell.swift */,
+				E2E1904A2978AE1F00C951ED /* ButtonCustomTableViewCell.swift */,
+				E21F9AE8297F252100C3CA20 /* PickerViewTableViewCell.swift */,
+				E21F9AEA297F2C6E00C3CA20 /* SwitchButtonTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -212,13 +224,17 @@
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				E2E190432977FD2500C951ED /* HomeGridCollectionViewCell.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
+				E2CB25972985C70900C17B99 /* AddReviewTableViewController.swift in Sources */,
+				E2E1904B2978AE1F00C951ED /* ButtonCustomTableViewCell.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
 				E2E190452977FF7600C951ED /* HomeListCollectionCell.swift in Sources */,
+				E21F9AE9297F252100C3CA20 /* PickerViewTableViewCell.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
-				E2E19049297853FF00C951ED /* AddPlaceCustomTableViewCell.swift in Sources */,
+				E2E19049297853FF00C951ED /* TextFieldCustomTableViewCell.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 				E2E1904729784D5400C951ED /* AddPlaceTableViewController.swift in Sources */,
+				E21F9AEB297F2C6E00C3CA20 /* SwitchButtonTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

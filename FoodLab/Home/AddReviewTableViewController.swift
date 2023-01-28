@@ -1,5 +1,5 @@
 //
-//  AddPlaceTableViewController.swift
+//  AddReviewTableViewController.swift
 //  FoodLab
 //
 //  Created by Paul Vayssier on 18/01/2023.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class AddPlaceTableViewController: UIViewController {
+final class AddReviewTableViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -57,6 +57,8 @@ final class AddPlaceTableViewController: UIViewController {
         return tableView
     }()
 
+
+
     // MARK: - Private Methods
 
     private func configureUI() {
@@ -66,7 +68,7 @@ final class AddPlaceTableViewController: UIViewController {
 
         view.addSubview(textField)
 
-        textField.text = "Add Place"
+        textField.text = "Add Review"
         textField.textAlignment = .center
 
         view.addSubview(tableView)
@@ -93,13 +95,13 @@ final class AddPlaceTableViewController: UIViewController {
 }
 
 // MARK: - TableViewDataSource
-extension AddPlaceTableViewController: UITableViewDataSource {
+extension AddReviewTableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1  {
             return 1
         }
-        return 3
+        return 2
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -122,22 +124,13 @@ extension AddPlaceTableViewController: UITableViewDataSource {
                 cell.configure(placeholder: "Content")
                 cell.isUserInteractionEnabled = true
                 return cell
-            } else if indexPath.row == 2 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchButtonTableViewCell.reuseIdentifier) as? SwitchButtonTableViewCell else {
-                    return UITableViewCell()
-                }
-                cell.configure("Favorite Place")
-                cell.isSelected = false
-                cell.switchButton.isSelected = true
-
-                return cell
             }
             return UITableViewCell()
         } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ButtonCustomTableViewCell.reuseIdentifier) as? ButtonCustomTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configure(title: "Add Place")
+            cell.configure(title: "Add Review")
             cell.isUserInteractionEnabled = true
             return cell
         }
@@ -147,7 +140,7 @@ extension AddPlaceTableViewController: UITableViewDataSource {
 }
 
 // MARK: - TableViewDelegate
-extension AddPlaceTableViewController: UITableViewDelegate {
+extension AddReviewTableViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1  {
@@ -157,4 +150,5 @@ extension AddPlaceTableViewController: UITableViewDelegate {
         }
         return 50
     }
+
 }

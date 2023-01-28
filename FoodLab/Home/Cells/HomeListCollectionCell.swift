@@ -52,18 +52,9 @@ class HomeListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.textAlignment = .left
-        label.numberOfLines = 1
-
         return label
     }()
 
-    private lazy var viewEmptyReview = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: contentView.frame.width, height: contentView.frame.height))
-        label.center = CGPoint(x: contentView.frame.width / 2, y: contentView.frame.height / 2)
-        label.textAlignment = .center
-        label.text = "Empty Matches"
-        return label
-    }()
 
     private func configureUI() {
         contentView.addSubview(imageView)
@@ -71,7 +62,6 @@ class HomeListCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(contentLabel)
         contentView.backgroundColor = .secondarySystemGroupedBackground
 
-        backgroundView?.addSubview(viewEmptyReview)
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -79,6 +69,7 @@ class HomeListCollectionViewCell: UICollectionViewCell {
         titleLabel.sizeToFit()
 
         let padding: CGFloat = 10
+
 
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: -padding),
