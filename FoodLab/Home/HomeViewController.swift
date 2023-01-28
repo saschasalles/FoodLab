@@ -42,7 +42,10 @@ final class HomeViewController: UIViewController {
             UIAction(
                 title: "Add New Place",
                 image: UIImage(systemName: "mappin"),
-                handler: {_ in self.showModal()}
+                handler: {_ in
+                    self.showModal()
+                    AddPlace.template.changeChoosed(true)
+                }
             ),
             UIAction(
                 title: "Add New Review",
@@ -74,8 +77,8 @@ final class HomeViewController: UIViewController {
     // MARK: - Modal
 
     func showModal() {
-        let placeModalViewController = AddPlaceViewController()
-        present(placeModalViewController, animated: true)
+        let modalViewController = ModalViewController()
+        present(modalViewController, animated: true)
     }
 
     // MARK: - Exposed Methods
@@ -92,16 +95,6 @@ final class HomeViewController: UIViewController {
 
         return imageView
     }()
-
-    // MARK: - TableView
-
-//    private let tableView: UITableView = {
-//        let table = UITableView()
-//        table.translatesAutoresizingMaskIntoConstraints = false
-//        table.register(CustomTableViewCell.self,
-//                       forCellReuseIdentifier: CustomTableViewCell.identifier)
-//        return table
-//    }()
 
     // MARK: - Collection View
 
@@ -155,41 +148,7 @@ final class HomeViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
-
-    // MARK: - Override
-
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        listLayout.frame = view.bounds
-//    }
 }
-
-// MARK: DataSource && Delegate
-
-//extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return Place.all.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(
-//            withIdentifier: CustomTableViewCell.identifier,
-//            for: indexPath) as? CustomTableViewCell else {
-//                return UITableViewCell()
-//            }
-//
-//        let index: Place = Place.all[indexPath.row]
-//        let placeName: String = index.name
-//        let placeImage: String = index.imagePath
-//
-//        cell.configure(text: placeName, imageName: placeImage)
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-//}
 
 
 // MARK: - CollectionViewDataSource

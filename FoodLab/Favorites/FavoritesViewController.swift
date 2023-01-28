@@ -30,8 +30,6 @@ final class FavoritesViewController: UIViewController {
             }
         }
 
-        private let cellReuseIdentifier = "favoritesCellReuseIdentifier"
-
         private let padding: CGFloat = 16
 
         private lazy var tableView: UITableView = {
@@ -114,10 +112,11 @@ final class FavoritesViewController: UIViewController {
             trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
         ) -> UISwipeActionsConfiguration? {
             UISwipeActionsConfiguration(actions: [
-                UIContextualAction(style: .destructive, title: "Remove", handler: { [weak self] _, _, _ in
+                UIContextualAction(style: .destructive, title: "Delete", handler: { [weak self] _, _, _ in
                     guard let self else { return }
-                    let placeName = self.places[indexPath.row].name
-                    self.places = self.places.filter({ $0.name != placeName })
+                    self.places[indexPath.row].setFavorite(false)
+                    tableView.reloadData()
+                    self.places = self.getFavoritesPlace()
                 })
             ])
         }

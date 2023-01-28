@@ -40,3 +40,8 @@ Il y a surement moyen, en s'inspirant du passage de grid à list de MatchLab à 
 J'essaye vraiment d'utiliser la doc Apple et de comprendre le code de match lab pour pouvoir vraiment apprendre. Le fait de ne pas trop utiliser internet et pas du tout chatGPT me permet de mieux comprendre certaines choses. La plus importante étant que la doc Apple est vraiment indigeste et manque d'exemples mdrrrr. 
 
 
+## Samedi 28 Janvier 2023 : 
+
+Je pense que ma méthode pour les modals n'est pas du tout la plus opti mais sur le moment j'en vois pas d'autres. Les fichiers dans le dossier ModalUITableViewCell se ressemblent trop, il doit y avoir un moyen de faire moins de duplicata de code. 
+
+Je ne sais pas comment récupérer les données des différentes cellules lors du clique sur le bouton.

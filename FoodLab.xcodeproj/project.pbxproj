@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		936ED2BF297824540035DAA9 /* PlaceModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */; };
-		936ED2C1297834870035DAA9 /* PlaceModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */; };
 		936ED2C629847D920035DAA9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2C529847D920035DAA9 /* HomeCollectionViewCell.swift */; };
 		936ED2C8298486960035DAA9 /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2C7298486960035DAA9 /* FavoritesListTableViewCell.swift */; };
+		936ED2CA298535A10035DAA9 /* HomeModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2C9298535A10035DAA9 /* HomeModals.swift */; };
+		936ED2CD29853C8C0035DAA9 /* TitlePlaceNameUITbaleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2CC29853C8C0035DAA9 /* TitlePlaceNameUITbaleViewCell.swift */; };
+		936ED2CF29853CAE0035DAA9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2CE29853CAE0035DAA9 /* ModalViewController.swift */; };
+		936ED2D22985988D0035DAA9 /* ContentDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2D12985988D0035DAA9 /* ContentDescriptionTableViewCell.swift */; };
+		936ED2D4298598A00035DAA9 /* PlaceCookStyleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2D3298598A00035DAA9 /* PlaceCookStyleTableViewCell.swift */; };
+		936ED2D6298598B40035DAA9 /* IsFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2D5298598B40035DAA9 /* IsFavoriteTableViewCell.swift */; };
+		936ED2D8298598CA0035DAA9 /* AddPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2D7298598CA0035DAA9 /* AddPhotoTableViewCell.swift */; };
+		936ED2DA298598EF0035DAA9 /* AddPlaceReviewButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED2D9298598EF0035DAA9 /* AddPlaceReviewButtonTableViewCell.swift */; };
 		DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207931297740CD00FABE95 /* AppDelegate.swift */; };
 		DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207933297740CD00FABE95 /* SceneDelegate.swift */; };
 		DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207935297740CD00FABE95 /* HomeViewController.swift */; };
@@ -23,10 +29,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModalViewController.swift; sourceTree = "<group>"; };
-		936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModalTableViewCell.swift; sourceTree = "<group>"; };
 		936ED2C529847D920035DAA9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		936ED2C7298486960035DAA9 /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2C9298535A10035DAA9 /* HomeModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModals.swift; sourceTree = "<group>"; };
+		936ED2CC29853C8C0035DAA9 /* TitlePlaceNameUITbaleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePlaceNameUITbaleViewCell.swift; sourceTree = "<group>"; };
+		936ED2CE29853CAE0035DAA9 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		936ED2D12985988D0035DAA9 /* ContentDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2D3298598A00035DAA9 /* PlaceCookStyleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCookStyleTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2D5298598B40035DAA9 /* IsFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2D7298598CA0035DAA9 /* AddPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		936ED2D9298598EF0035DAA9 /* AddPlaceReviewButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceReviewButtonTableViewCell.swift; sourceTree = "<group>"; };
 		DC20792E297740CD00FABE95 /* FoodLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC207931297740CD00FABE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC207933297740CD00FABE95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,13 +64,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		936ED2C2297834960035DAA9 /* PlaceModal */ = {
+		936ED2CB29853BC40035DAA9 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
-				936ED2C0297834870035DAA9 /* PlaceModalTableViewCell.swift */,
-				936ED2BE297824540035DAA9 /* PlaceModalViewController.swift */,
+				936ED2D0298597C60035DAA9 /* ModalUITableViewCell */,
+				936ED2CE29853CAE0035DAA9 /* ModalViewController.swift */,
 			);
-			path = PlaceModal;
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		936ED2D0298597C60035DAA9 /* ModalUITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				936ED2CC29853C8C0035DAA9 /* TitlePlaceNameUITbaleViewCell.swift */,
+				936ED2D12985988D0035DAA9 /* ContentDescriptionTableViewCell.swift */,
+				936ED2D3298598A00035DAA9 /* PlaceCookStyleTableViewCell.swift */,
+				936ED2D5298598B40035DAA9 /* IsFavoriteTableViewCell.swift */,
+				936ED2D7298598CA0035DAA9 /* AddPhotoTableViewCell.swift */,
+				936ED2D9298598EF0035DAA9 /* AddPlaceReviewButtonTableViewCell.swift */,
+			);
+			path = ModalUITableViewCell;
 			sourceTree = "<group>";
 		};
 		DC207925297740CD00FABE95 = {
@@ -113,7 +138,7 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				936ED2C2297834960035DAA9 /* PlaceModal */,
+				936ED2CB29853BC40035DAA9 /* Modals */,
 				936ED2C529847D920035DAA9 /* HomeCollectionViewCell.swift */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 			);
@@ -126,6 +151,7 @@
 				DC20794B297741D500FABE95 /* TabItem.swift */,
 				DC2079572977625500FABE95 /* Place.swift */,
 				DC2079592977636A00FABE95 /* Review.swift */,
+				936ED2C9298535A10035DAA9 /* HomeModals.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,15 +242,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936ED2DA298598EF0035DAA9 /* AddPlaceReviewButtonTableViewCell.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
 				936ED2C8298486960035DAA9 /* FavoritesListTableViewCell.swift in Sources */,
+				936ED2D4298598A00035DAA9 /* PlaceCookStyleTableViewCell.swift in Sources */,
+				936ED2D22985988D0035DAA9 /* ContentDescriptionTableViewCell.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
-				936ED2C1297834870035DAA9 /* PlaceModalTableViewCell.swift in Sources */,
+				936ED2CD29853C8C0035DAA9 /* TitlePlaceNameUITbaleViewCell.swift in Sources */,
+				936ED2CF29853CAE0035DAA9 /* ModalViewController.swift in Sources */,
+				936ED2D6298598B40035DAA9 /* IsFavoriteTableViewCell.swift in Sources */,
+				936ED2D8298598CA0035DAA9 /* AddPhotoTableViewCell.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				936ED2CA298535A10035DAA9 /* HomeModals.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
-				936ED2BF297824540035DAA9 /* PlaceModalViewController.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 				936ED2C629847D920035DAA9 /* HomeCollectionViewCell.swift in Sources */,
 			);
@@ -367,7 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = DK44QR7W5U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -394,7 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = DK44QR7W5U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
