@@ -37,12 +37,16 @@ class ModalViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        AddPlace.template.changeChoosed(false)
-        AddReview.template.changeChoosed(false)
+        HomeModals.addPlaceTemplate.changeChoosed(false)
+        HomeModals.addReviewTemplate.changeChoosed(false)
     }
 
     private func getModalTitle() -> String{
-        return AddPlace.template.modalTitle
+        if(HomeModals.addPlaceTemplate.isChoosed){
+            return HomeModals.addPlaceTemplate.modalTitle
+        }else{
+            return HomeModals.addReviewTemplate.modalTitle
+        }
     }
 
     // MARK: - TableView
@@ -116,10 +120,6 @@ extension ModalViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if(AddPlace.template.isChoosed){
-            return "Add Place"
-        }else{
-            return "Add Review"
-        }
+        return getModalTitle()
     }
 }

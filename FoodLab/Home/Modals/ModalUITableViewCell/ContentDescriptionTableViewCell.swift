@@ -31,11 +31,19 @@ class ContentDescriptionTableViewCell: UITableViewCell {
         }
     }
 
+    private func getModalCellContent() -> String{
+        if(HomeModals.addPlaceTemplate.isChoosed){
+            return HomeModals.addPlaceTemplate.cellContent
+        }else{
+            return HomeModals.addReviewTemplate.cellContent
+        }
+    }
+
     private lazy var titletextField: UITextField = {
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 16, weight: .medium)
         textField.textAlignment = .left
-        textField.placeholder = AddPlace.template.isChoosed ? "Description" : "Content"
+        textField.placeholder = getModalCellContent()
 
         return textField
     }()

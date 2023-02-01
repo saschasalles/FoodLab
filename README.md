@@ -45,3 +45,10 @@ J'essaye vraiment d'utiliser la doc Apple et de comprendre le code de match lab 
 Je pense que ma méthode pour les modals n'est pas du tout la plus opti mais sur le moment j'en vois pas d'autres. Les fichiers dans le dossier ModalUITableViewCell se ressemblent trop, il doit y avoir un moyen de faire moins de duplicata de code. 
 
 Je ne sais pas comment récupérer les données des différentes cellules lors du clique sur le bouton.
+
+
+## Dimanche 29 Janvier 2023 : 
+
+J'ai mis a jour l'objet HomeModals, chaque modal est devenu un template afin d'avoir un code plus propre imo
+
+J'ai fais exprès de push que maintenant même si je l'ai fait le dimanche car j'ai fait ca après la date de rendu et je voulais donc pas que ca soit pris pour du retard ou autres. C'est juste du travail en plus car pas satisfait (et que je me faisais un peu chier dans le train mdr)

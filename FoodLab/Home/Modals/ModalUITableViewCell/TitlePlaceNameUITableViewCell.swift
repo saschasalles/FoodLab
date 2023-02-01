@@ -31,11 +31,19 @@ class TitlePlaceNameUITableViewCell: UITableViewCell {
         }
     }
 
+    private func getModalCellType() -> String{
+        if(HomeModals.addPlaceTemplate.isChoosed){
+            return HomeModals.addPlaceTemplate.cellType
+        }else{
+            return HomeModals.addReviewTemplate.cellType
+        }
+    }
+
     private lazy var titletextField: UITextField = {
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 16, weight: .medium)
         textField.textAlignment = .left
-        textField.placeholder = AddPlace.template.isChoosed ? "Place Name" : "Title"
+        textField.placeholder = getModalCellType()
 
         return textField
     }()

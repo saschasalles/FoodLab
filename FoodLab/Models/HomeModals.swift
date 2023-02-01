@@ -8,66 +8,53 @@
 import Foundation
 import UIKit
 
-final class AddPlace {
+final class HomeModals {
     init(
         modalTitle: String,
-        placeName: String,
-        description: String
+        cellType: String,
+        cellContent: String,
+        pickerName: String,
+        favorite: String? = nil,
+        buttonLabel: String,
+        isChoosed: Bool
     ){
         self.modalTitle = modalTitle
-        self.placeName = placeName
-        self.description = placeName
+        self.cellType = cellType
+        self.cellContent = cellContent
+        self.pickerName = pickerName
+        self.favorite = favorite
+        self.buttonLabel = buttonLabel
+        self.isChoosed = isChoosed
     }
     let id = UUID()
 
     var modalTitle: String
-    var placeName: String
-    var description: String
-//    var cookStyle: UIPickerView
-//    var isFavorite: Bool
+    var cellType: String
+    var cellContent: String
+    var pickerName: String
+    var favorite: String?
 
-//    let addPlaceLabel: UILabel
+    let buttonLabel: String
 
-    private(set) var isChoosed = false
+    private(set) var isChoosed: Bool
 
-    static var template = AddPlace(
+    static var addPlaceTemplate = HomeModals(
         modalTitle: "Add Place",
-        placeName: "Place Name",
-        description: "Description"
+        cellType: "Place Name",
+        cellContent: "Description",
+        pickerName: "Cook Style",
+        favorite: "Favorite Place",
+        buttonLabel: "Add Place",
+        isChoosed: false
     )
 
-    func changeChoosed(_ choosed: Bool){
-        isChoosed = choosed
-    }
-}
-
-
-final class AddReview {
-    init(
-        modalTitle: String,
-        placeName: String,
-        description: String
-    ){
-        self.modalTitle = modalTitle
-        self.placeName = placeName
-        self.description = placeName
-    }
-    let id = UUID()
-
-    var modalTitle: String
-    var placeName: String
-    var description: String
-//    var cookStyle: UIPickerView
-//    var isFavorite: Bool
-
-//    let addPlaceLabel: UILabel
-
-    private(set) var isChoosed = false
-
-    static var template = AddPlace(
+    static var addReviewTemplate = HomeModals(
         modalTitle: "Add Review",
-        placeName: "Title",
-        description: "Content"
+        cellType: "Title",
+        cellContent: "Content",
+        pickerName: "Place",
+        buttonLabel: "Add Review",
+        isChoosed: false
     )
 
     func changeChoosed(_ choosed: Bool){

@@ -44,13 +44,16 @@ final class HomeViewController: UIViewController {
                 image: UIImage(systemName: "mappin"),
                 handler: {_ in
                     self.showModal()
-                    AddPlace.template.changeChoosed(true)
+                    HomeModals.addPlaceTemplate.changeChoosed(true)
                 }
             ),
             UIAction(
                 title: "Add New Review",
                 image: UIImage(systemName: "list.bullet.clipboard"),
-                handler: {_ in self.showModal()}
+                handler: {_ in
+                    self.showModal()
+                    HomeModals.addReviewTemplate.changeChoosed(true)
+                }
             )
         ]
 

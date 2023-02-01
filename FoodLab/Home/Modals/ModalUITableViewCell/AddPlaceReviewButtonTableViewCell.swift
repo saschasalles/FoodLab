@@ -31,9 +31,17 @@ class AddPlaceReviewButtonTableViewCell: UITableViewCell {
         }
     }
 
+    private func getModalButtonLabel() -> String{
+        if(HomeModals.addPlaceTemplate.isChoosed){
+            return HomeModals.addPlaceTemplate.buttonLabel
+        }else{
+            return HomeModals.addReviewTemplate.buttonLabel
+        }
+    }
+
     private lazy var addButton: UIButton = {
         let button = UIButton()
-        let textButton = AddPlace.template.isChoosed ? "Add Place" : "Add Review"
+        let textButton = getModalButtonLabel()
         button.setTitle(textButton, for: .normal)
         button.backgroundColor = UIColor(named: "AccentColor")
         button.tintColor = UIColor.white
