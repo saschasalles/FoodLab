@@ -136,7 +136,9 @@ final class HomeViewController: UICollectionViewController {
 
     private func presentForm(kind: FormViewController.Kind) {
         let formViewController = FormViewController(kind: kind)
-        formViewController.onDismiss = dismissAction
+        formViewController.onDismiss = { [weak self] in
+            self?.dismissAction()
+        }
 
         let navigationController = UINavigationController(
             rootViewController: formViewController

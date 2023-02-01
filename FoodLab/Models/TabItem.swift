@@ -19,7 +19,7 @@ enum TabItem: Int, CaseIterable {
             )
         case .favs:
             return makeNavigationViewController(
-                rootViewController: FavoritesViewController()
+                rootViewController: FavoritesViewController(viewModel: FavoritesViewModel())
             )
         }
     }

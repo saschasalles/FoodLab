@@ -37,6 +37,7 @@
 		DC699FFD2986AFB70058BDB8 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FFC2986AFB70058BDB8 /* RateButton.swift */; };
 		DC69A0002986B7630058BDB8 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FFF2986B7630058BDB8 /* ImageManager.swift */; };
 		DC69A0052986CF7C0058BDB8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69A0042986CF7C0058BDB8 /* EmptyStateView.swift */; };
+		DCABA072298AC0E9006AA628 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCABA071298AC0E9006AA628 /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		DC699FFC2986AFB70058BDB8 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		DC699FFF2986B7630058BDB8 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		DC69A0042986CF7C0058BDB8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		DCABA071298AC0E9006AA628 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
 				DC207977297DB34200FABE95 /* FavoritesViewControllerCell.swift */,
+				DCABA071298AC0E9006AA628 /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCABA072298AC0E9006AA628 /* FavoritesViewModel.swift in Sources */,
 				DC20797A297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift in Sources */,
 				DC20796E297C45E500FABE95 /* FormAddButtonCell.swift in Sources */,
 				DC207972297C48C900FABE95 /* FormMenuPickerCell.swift in Sources */,

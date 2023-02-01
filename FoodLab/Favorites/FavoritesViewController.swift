@@ -9,7 +9,8 @@ import UIKit
 
 final class FavoritesViewController: UITableViewController {
 
-    init() {
+    init(viewModel: FavoritesViewModel) {
+        self.viewModel = viewModel
         super.init(style: .insetGrouped)
     }
 
@@ -21,40 +22,38 @@ final class FavoritesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.onReload = { [weak self] isNotEmpty in
+            self?.tableView.backgroundView?.isHidden = isNotEmpty
+        }
+
+
         configureUI()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        reloadData()
+        viewModel.viewDidAppear()
+        tableView.reloadData()
     }
 
     // MARK: - Private Properties
 
-    private var favItems: [Place] = Place.all.filter(\.isFavorite) {
-        willSet {
-            tableView.backgroundView?.isHidden = !newValue.isEmpty
-        }
-    }
+    private let viewModel: FavoritesViewModel
+
 
     private func deleteAction(row: Int) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "") { [weak self] _, _, _ in
             guard let self else { return }
 
-            let favItem = self.favItems[row]
-            Place.all.first(where: { $0.id == favItem.id })?.isFavorite = false
-            self.reloadData()
+            self.viewModel.didSwipeTrailing(row: row)
+            self.tableView.reloadData()
         }
 
         action.image = UIImage(systemName: "star.slash.fill")
         action.backgroundColor = .systemYellow
-
+        
         return action
-    }
-
-    private func reloadData() {
-        favItems = Place.all.filter(\.isFavorite)
-        tableView.reloadData()
     }
 
     // MARK: - Private Methods
@@ -77,7 +76,7 @@ final class FavoritesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        favItems.count
+        viewModel.favItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,7 +86,7 @@ final class FavoritesViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let item = favItems[indexPath.row]
+        let item = viewModel.favItems[indexPath.row]
         cell.configure(title: item.name)
 
         return cell
