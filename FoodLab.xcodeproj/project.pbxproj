@@ -16,6 +16,27 @@
 		DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20795229774BAB00FABE95 /* FavoritesViewController.swift */; };
 		DC2079582977625500FABE95 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079572977625500FABE95 /* Place.swift */; };
 		DC20795A2977636A00FABE95 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079592977636A00FABE95 /* Review.swift */; };
+		DC2079682978465500FABE95 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079672978465500FABE95 /* FormViewController.swift */; };
+		DC20796B297C3BF800FABE95 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20796A297C3BF800FABE95 /* FormItem.swift */; };
+		DC20796E297C45E500FABE95 /* FormAddButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20796D297C45E500FABE95 /* FormAddButtonCell.swift */; };
+		DC207970297C484B00FABE95 /* FormTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20796F297C484B00FABE95 /* FormTextInputCell.swift */; };
+		DC207972297C48C900FABE95 /* FormMenuPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207971297C48C900FABE95 /* FormMenuPickerCell.swift */; };
+		DC207974297C492000FABE95 /* FormLibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207973297C492000FABE95 /* FormLibraryCell.swift */; };
+		DC207976297C493400FABE95 /* FormToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207975297C493400FABE95 /* FormToggleCell.swift */; };
+		DC207978297DB34200FABE95 /* FavoritesViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207977297DB34200FABE95 /* FavoritesViewControllerCell.swift */; };
+		DC20797A297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207979297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift */; };
+		DC20797F297DCB6C00FABE95 /* HomeGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20797E297DCB6C00FABE95 /* HomeGridCell.swift */; };
+		DC207982297DDBBE00FABE95 /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC207981297DDBBE00FABE95 /* RoundedBackgroundView.swift */; };
+		DC20799C297F1F9F00FABE95 /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20799B297F1F9F00FABE95 /* HomeListCell.swift */; };
+		DC20799E297F377000FABE95 /* HomeSectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20799D297F377000FABE95 /* HomeSectionHeaderCell.swift */; };
+		DC2079A0297F3CF300FABE95 /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20799F297F3CF300FABE95 /* HomeItem.swift */; };
+		DC2079A2297F3D7000FABE95 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2079A1297F3D7000FABE95 /* HomeSection.swift */; };
+		DC699FF42985C9A30058BDB8 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FF32985C9A30058BDB8 /* HomeCollectionViewDataSource.swift */; };
+		DC699FF82985DE430058BDB8 /* FormLargeTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FF72985DE430058BDB8 /* FormLargeTextInputCell.swift */; };
+		DC699FFA2985E6800058BDB8 /* FormRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FF92985E6800058BDB8 /* FormRateCell.swift */; };
+		DC699FFD2986AFB70058BDB8 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FFC2986AFB70058BDB8 /* RateButton.swift */; };
+		DC69A0002986B7630058BDB8 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC699FFF2986B7630058BDB8 /* ImageManager.swift */; };
+		DC69A0052986CF7C0058BDB8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69A0042986CF7C0058BDB8 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +52,27 @@
 		DC2079542977586D00FABE95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC2079572977625500FABE95 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DC2079592977636A00FABE95 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		DC2079672978465500FABE95 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		DC20796A297C3BF800FABE95 /* FormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
+		DC20796D297C45E500FABE95 /* FormAddButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAddButtonCell.swift; sourceTree = "<group>"; };
+		DC20796F297C484B00FABE95 /* FormTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextInputCell.swift; sourceTree = "<group>"; };
+		DC207971297C48C900FABE95 /* FormMenuPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormMenuPickerCell.swift; sourceTree = "<group>"; };
+		DC207973297C492000FABE95 /* FormLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLibraryCell.swift; sourceTree = "<group>"; };
+		DC207975297C493400FABE95 /* FormToggleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormToggleCell.swift; sourceTree = "<group>"; };
+		DC207977297DB34200FABE95 /* FavoritesViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewControllerCell.swift; sourceTree = "<group>"; };
+		DC207979297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCompositionalLayout.swift; sourceTree = "<group>"; };
+		DC20797E297DCB6C00FABE95 /* HomeGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGridCell.swift; sourceTree = "<group>"; };
+		DC207981297DDBBE00FABE95 /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		DC20799B297F1F9F00FABE95 /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
+		DC20799D297F377000FABE95 /* HomeSectionHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderCell.swift; sourceTree = "<group>"; };
+		DC20799F297F3CF300FABE95 /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
+		DC2079A1297F3D7000FABE95 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		DC699FF32985C9A30058BDB8 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		DC699FF72985DE430058BDB8 /* FormLargeTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLargeTextInputCell.swift; sourceTree = "<group>"; };
+		DC699FF92985E6800058BDB8 /* FormRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRateCell.swift; sourceTree = "<group>"; };
+		DC699FFC2986AFB70058BDB8 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
+		DC699FFF2986B7630058BDB8 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		DC69A0042986CF7C0058BDB8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +106,9 @@
 		DC207930297740CD00FABE95 /* FoodLab */ = {
 			isa = PBXGroup;
 			children = (
+				DC69A0032986CF5A0058BDB8 /* Common */,
+				DC699FFE2986B7540058BDB8 /* Managers */,
+				DC2079662978463500FABE95 /* Form */,
 				DC20795129774B4A00FABE95 /* Favorites */,
 				DC207945297740FA00FABE95 /* Core */,
 				DC2079482977413100FABE95 /* Home */,
@@ -96,6 +141,10 @@
 		DC2079482977413100FABE95 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DC699FF62985CE920058BDB8 /* Layout */,
+				DC699FF52985CE8B0058BDB8 /* DataSource */,
+				DC207980297DDBA300FABE95 /* Decoration */,
+				DC20797B297DCB5B00FABE95 /* Cells */,
 				DC207935297740CD00FABE95 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -107,6 +156,9 @@
 				DC20794B297741D500FABE95 /* TabItem.swift */,
 				DC2079572977625500FABE95 /* Place.swift */,
 				DC2079592977636A00FABE95 /* Review.swift */,
+				DC20796A297C3BF800FABE95 /* FormItem.swift */,
+				DC20799F297F3CF300FABE95 /* HomeItem.swift */,
+				DC2079A1297F3D7000FABE95 /* HomeSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,8 +174,91 @@
 			isa = PBXGroup;
 			children = (
 				DC20795229774BAB00FABE95 /* FavoritesViewController.swift */,
+				DC207977297DB34200FABE95 /* FavoritesViewControllerCell.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		DC2079662978463500FABE95 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				DC20796C297C45CF00FABE95 /* Cells */,
+				DC2079672978465500FABE95 /* FormViewController.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		DC20796C297C45CF00FABE95 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC699FFB2986AF9E0058BDB8 /* RateCell */,
+				DC20796D297C45E500FABE95 /* FormAddButtonCell.swift */,
+				DC20796F297C484B00FABE95 /* FormTextInputCell.swift */,
+				DC207971297C48C900FABE95 /* FormMenuPickerCell.swift */,
+				DC207973297C492000FABE95 /* FormLibraryCell.swift */,
+				DC207975297C493400FABE95 /* FormToggleCell.swift */,
+				DC699FF72985DE430058BDB8 /* FormLargeTextInputCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DC20797B297DCB5B00FABE95 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC20797E297DCB6C00FABE95 /* HomeGridCell.swift */,
+				DC20799B297F1F9F00FABE95 /* HomeListCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DC207980297DDBA300FABE95 /* Decoration */ = {
+			isa = PBXGroup;
+			children = (
+				DC20799D297F377000FABE95 /* HomeSectionHeaderCell.swift */,
+				DC207981297DDBBE00FABE95 /* RoundedBackgroundView.swift */,
+			);
+			path = Decoration;
+			sourceTree = "<group>";
+		};
+		DC699FF52985CE8B0058BDB8 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				DC699FF32985C9A30058BDB8 /* HomeCollectionViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		DC699FF62985CE920058BDB8 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				DC207979297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		DC699FFB2986AF9E0058BDB8 /* RateCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC699FF92985E6800058BDB8 /* FormRateCell.swift */,
+				DC699FFC2986AFB70058BDB8 /* RateButton.swift */,
+			);
+			path = RateCell;
+			sourceTree = "<group>";
+		};
+		DC699FFE2986B7540058BDB8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DC699FFF2986B7630058BDB8 /* ImageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DC69A0032986CF5A0058BDB8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DC69A0042986CF7C0058BDB8 /* EmptyStateView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,12 +331,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC20797A297DC61F00FABE95 /* HomeCollectionViewCompositionalLayout.swift in Sources */,
+				DC20796E297C45E500FABE95 /* FormAddButtonCell.swift in Sources */,
+				DC207972297C48C900FABE95 /* FormMenuPickerCell.swift in Sources */,
+				DC69A0002986B7630058BDB8 /* ImageManager.swift in Sources */,
+				DC699FF82985DE430058BDB8 /* FormLargeTextInputCell.swift in Sources */,
+				DC207978297DB34200FABE95 /* FavoritesViewControllerCell.swift in Sources */,
+				DC69A0052986CF7C0058BDB8 /* EmptyStateView.swift in Sources */,
+				DC207982297DDBBE00FABE95 /* RoundedBackgroundView.swift in Sources */,
 				DC207936297740CD00FABE95 /* HomeViewController.swift in Sources */,
+				DC20796B297C3BF800FABE95 /* FormItem.swift in Sources */,
 				DC20795A2977636A00FABE95 /* Review.swift in Sources */,
+				DC207976297C493400FABE95 /* FormToggleCell.swift in Sources */,
+				DC20799E297F377000FABE95 /* HomeSectionHeaderCell.swift in Sources */,
+				DC699FFD2986AFB70058BDB8 /* RateButton.swift in Sources */,
+				DC699FF42985C9A30058BDB8 /* HomeCollectionViewDataSource.swift in Sources */,
 				DC207932297740CD00FABE95 /* AppDelegate.swift in Sources */,
 				DC20794C297741D500FABE95 /* TabItem.swift in Sources */,
+				DC2079A2297F3D7000FABE95 /* HomeSection.swift in Sources */,
 				DC20795329774BAB00FABE95 /* FavoritesViewController.swift in Sources */,
+				DC2079A0297F3CF300FABE95 /* HomeItem.swift in Sources */,
+				DC20797F297DCB6C00FABE95 /* HomeGridCell.swift in Sources */,
 				DC2079582977625500FABE95 /* Place.swift in Sources */,
+				DC20799C297F1F9F00FABE95 /* HomeListCell.swift in Sources */,
+				DC2079682978465500FABE95 /* FormViewController.swift in Sources */,
+				DC207970297C484B00FABE95 /* FormTextInputCell.swift in Sources */,
+				DC699FFA2985E6800058BDB8 /* FormRateCell.swift in Sources */,
+				DC207974297C492000FABE95 /* FormLibraryCell.swift in Sources */,
 				DC207934297740CD00FABE95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,9 +499,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R2FRMHM6FP;
+				DEVELOPMENT_TEAM = HTG9L2LEBP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photo library in display your food pics.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -373,6 +530,7 @@
 				DEVELOPMENT_TEAM = R2FRMHM6FP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLab/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to access your photo library in display your food pics.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
