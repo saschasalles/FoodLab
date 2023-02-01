@@ -8,8 +8,8 @@
 import Foundation
 
 enum FormSection: Int, CaseIterable {
-    case main
-    case add
+    case main = 0
+    case add = 1
 
     func numberOfItems(kind: FormViewControllerKind) -> Int {
         FormItem.items(forKind: kind, section: self).count
@@ -31,8 +31,6 @@ enum FormItem: String, CaseIterable {
     var reuseId: String {
         return "\(rawValue)_reuseIdentifier"
     }
-
-    //
 
     func placeHolder(forKind kind: FormViewControllerKind) -> String {
         switch kind {

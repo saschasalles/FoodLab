@@ -40,7 +40,7 @@ final class FormMenuPickerCell: UITableViewCell {
 
         let menu = UIMenu(
             title: menuTitle ?? "",
-            image: UIImage(systemName: "arrow.up.and.down"),
+            image: UIImage(systemName: "chevron.up.and.down"),
             options: .singleSelection,
             children: actions
         )

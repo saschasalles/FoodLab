@@ -9,6 +9,8 @@ import UIKit
 
 final class FormLibraryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        generator = UIImpactFeedbackGenerator(style: .soft)
+        generator.prepare()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
@@ -25,6 +27,8 @@ final class FormLibraryCell: UITableViewCell {
         return conf
     }()
 
+    private let generator: UIImpactFeedbackGenerator
+
     private let plusImageView = UIImageView(image: UIImage(systemName: "plus"))
 
 
@@ -34,6 +38,7 @@ final class FormLibraryCell: UITableViewCell {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let self else { return }
             self.contentView.alpha = state.isHighlighted ? 0.6 : 1
+            self.generator.impactOccurred()
         }
     }
 

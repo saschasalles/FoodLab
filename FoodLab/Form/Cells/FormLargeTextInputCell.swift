@@ -34,9 +34,8 @@ final class FormLargeTextInputCell: UITableViewCell {
         label.font = .systemFont(ofSize: UIFont.labelFontSize)
         label.textAlignment = .left
         label.baselineAdjustment = .alignBaselines
-
         label.sizeToFit()
-        label.text = "youojou"
+        label.text = ""
 
         return label
     }()
@@ -89,7 +88,6 @@ final class FormLargeTextInputCell: UITableViewCell {
 }
 
 extension FormLargeTextInputCell: UITextViewDelegate {
-
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
     }

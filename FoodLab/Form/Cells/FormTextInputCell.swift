@@ -26,13 +26,13 @@ final class FormTextInputCell: UITableViewCell {
         }
     }
 
-
     private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.contentVerticalAlignment = .top
         textField.textAlignment = .left
         textField.contentHorizontalAlignment = .left
         textField.autocorrectionType = .no
+        textField.clearButtonMode = .always
 
         return textField
     }()
